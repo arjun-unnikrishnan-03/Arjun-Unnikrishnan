@@ -86,10 +86,14 @@ function animateCounters() {
   });
 }
 
-// ⏱️ Trigger counters on scroll
+// ⏱️ Trigger counters on scroll - only once
+let countersStarted = false;
+
 window.addEventListener("scroll", () => {
   const statsSection = document.getElementById("stats");
-  if (statsSection && statsSection.getBoundingClientRect().top < window.innerHeight - 100) {
+  if (!countersStarted && statsSection && statsSection.getBoundingClientRect().top < window.innerHeight - 100) {
     animateCounters();
+    countersStarted = true; // Ensure it runs only once
   }
 });
+

@@ -91,3 +91,50 @@ body, html {
 #about img {
   border: 4px solid #fff;
 }
+.about-section {
+  color: #fff;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.badge {
+  background: #0dcaf0;
+  margin: 4px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.profile-img {
+  max-width: 180px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: rotate(-2deg) scale(1.05);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
