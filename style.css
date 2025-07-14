@@ -166,7 +166,7 @@ body, html {
 #contactBtn:hover {
     background: #0bbdd1;
     transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 16px rgba(251, 249, 249, 0.4);
 }
 
 /* ---------------- Glass Card Style (Reusable) ---------------- */
