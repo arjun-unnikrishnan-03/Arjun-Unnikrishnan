@@ -16,21 +16,19 @@ function type() {
 
   if (!isDeleting && j <= textArray[i].length) {
     currentText = textArray[i].substring(0, j++);
-    delay = 100; // Typing speed
+    delay = 100;
   } else if (isDeleting && j >= 0) {
     currentText = textArray[i].substring(0, j--);
-    delay = 50; // Deleting speed
+    delay = 50;
   }
 
   document.querySelector(".typewriter-text").innerHTML = currentText + "|";
 
-  // Pause after full word typed
   if (j === textArray[i].length && !isDeleting) {
     isDeleting = true;
-    delay = 1200; // Pause before deleting
+    delay = 1200;
   }
 
-  // Pause before typing next word
   if (j === 0 && isDeleting) {
     isDeleting = false;
     i++;
@@ -40,20 +38,16 @@ function type() {
   setTimeout(type, delay);
 }
 
-window.addEventListener("load", type);
-
-
 window.onload = () => {
-  type();
+  type(); // ✅ Only one call
   document.getElementById("preloader").style.display = "none";
 
-  // Dark Mode Restore
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
   }
 };
 
-// Scroll Progress
+// Scroll Progress & Reveal
 window.onscroll = function () {
   const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
