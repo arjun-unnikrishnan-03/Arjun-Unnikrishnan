@@ -2,100 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arjun Unnikrishnan - Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- Preloader -->
-<div id="preloader">
-  <div class="spinner"></div>
-</div>
+<!-- Background Video -->
+<video autoplay muted loop id="bgVideo">
+  <source src="assets/background.mp4" type="video/mp4" />
+  Your browser does not support HTML5 video.
+</video>
 
-<!-- Scroll Progress Bar -->
-<div id="scroll-bar"></div>
+<!-- Overlay -->
+<div class="overlay"></div>
 
-<!-- Hero Section -->
-<section id="hero">
-  <video autoplay muted loop id="bg-video">
-    <source src="assets/background.mp4" type="video/mp4" />
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-content text-center text-white">
-    <img src="assets/profile.jpg" alt="profile" class="profile-img mb-3"/>
-    <h1 class="display-5 fw-bold">Arjun Unnikrishnan</h1>
-    <p class="lead">AI Enthusiast • Software Developer • Creative Thinker</p>
-    <a href="assets/resume.pdf" download class="resume-btn mt-3">📄 Resume</a>
-    <div class="social-links mt-3">
-      <a href="https://github.com/arjun-unnikrishnan-03" target="_blank">💻</a>
-      <a href="https://www.linkedin.com/in/arjun-u03/" target="_blank">🔗</a>
+<!-- Navigation -->
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Arjun U.</a>
+    <div class="ms-auto">
+      <a class="nav-link text-white" href="#about">About</a>
+      <a class="nav-link text-white" href="#projects">Projects</a>
+      <a class="nav-link text-white" href="#blog">Blog</a>
+      <a class="nav-link text-white" href="#contact">Contact</a>
     </div>
   </div>
-</section>
+</nav>
 
-<!-- About -->
-<section id="about" class="section">
-  <div class="container text-center">
-    <h2>About Me</h2>
-    <p>I’m an MCA graduate passionate about AI, ML, and building intelligent apps. This portfolio showcases my best projects and blog insights.</p>
+<!-- Hero -->
+<header class="text-center text-white hero-section">
+  <img src="assets/profile.jpg" class="rounded-circle shadow-lg mb-3" width="130" alt="profile" />
+  <h1 class="display-4 fw-bold">Arjun Unnikrishnan</h1>
+  <p class="lead">AI Enthusiast • Software Developer • Creative Thinker</p>
+  <div class="mt-3">
+    <a href="assets/resume.pdf" download class="btn btn-outline-light me-2">📄 Resume</a>
+    <a href="https://github.com/arjun-unnikrishnan-03" target="_blank" class="btn btn-outline-light">GitHub</a>
+    <a href="https://www.linkedin.com/in/arjun-u03/" target="_blank" class="btn btn-outline-light">LinkedIn</a>
   </div>
-</section>
+</header>
 
-<!-- Projects -->
-<section id="projects" class="section bg-light">
-  <div class="container">
-    <h2 class="text-center">Projects</h2>
-    <div class="row g-4 mt-4">
+<main class="container my-5 text-dark bg-white rounded shadow p-4">
+
+  <!-- About -->
+  <section id="about" class="mb-5">
+    <h2 class="text-center mb-3">About Me</h2>
+    <p class="text-center">I’m an MCA graduate passionate about AI, ML, and building intelligent apps. This portfolio showcases my best projects and blog insights.</p>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="mb-5">
+    <h2 class="text-center mb-4">Projects</h2>
+    <div class="row g-4">
       <div class="col-md-6">
-        <div class="card p-3 shadow">
+        <div class="card p-3 shadow-sm h-100">
           <h5>Age and Gender Detection</h5>
           <p>Detects age & gender using Python, OpenCV, and Deep Learning.</p>
           <a href="projects/age-gender.html" class="btn btn-outline-primary btn-sm">Details</a>
-          <a href="https://github.com/arjun-unnikrishnan-03/age-gender-detection" target="_blank">GitHub</a>
+          <a href="https://github.com/arjun-unnikrishnan-03/age-gender-detection" class="btn btn-link btn-sm">GitHub</a>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card p-3 shadow">
+        <div class="card p-3 shadow-sm h-100">
           <h5>Astrology Chatbot</h5>
           <p>Chatbot using LLM for astrology queries like marriage timing.</p>
           <a href="projects/astrology-chatbot.html" class="btn btn-outline-primary btn-sm">Details</a>
-          <a href="https://github.com/arjun-unnikrishnan-03/Astrology-prediction" target="_blank">GitHub</a>
+          <a href="https://github.com/arjun-unnikrishnan-03/Astrology-prediction" class="btn btn-link btn-sm">GitHub</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Blog -->
-<section id="blog" class="section">
-  <div class="container text-center">
-    <h2>Blog</h2>
-    <ul class="list-unstyled">
+  <!-- Blog -->
+  <section id="blog" class="mb-5">
+    <h2 class="text-center mb-3">Blog</h2>
+    <ul class="list-unstyled text-center">
       <li><a href="blog/post1.html">How I Built My First AI Project</a></li>
       <li><a href="blog/post2.html">Top 5 Tools Every Developer Should Know</a></li>
     </ul>
-  </div>
-</section>
+  </section>
 
-<!-- Contact -->
-<section id="contact" class="section bg-light">
-  <div class="container text-center">
-    <h2>Contact Me</h2>
-    <form onsubmit="copyEmail(event)" class="mt-3">
-      <input type="text" placeholder="Your Name" class="form-control mb-2" required/>
-      <input type="email" placeholder="Your Email" class="form-control mb-2" required/>
-      <textarea placeholder="Your Message" class="form-control mb-2" required></textarea>
-      <button type="submit" class="btn btn-success">Send</button>
-      <p class="text-muted mt-2">This form copies my email to your clipboard.</p>
+  <!-- Contact -->
+  <section id="contact">
+    <h2 class="text-center mb-3">Contact Me</h2>
+    <form class="row g-3" onsubmit="copyEmail(event)">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Your Name" required />
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" placeholder="Your Email" required />
+      </div>
+      <div class="col-12">
+        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button class="btn btn-success">Send</button>
+        <p class="text-muted mt-2">This form copies my email to your clipboard.</p>
+      </div>
     </form>
-  </div>
-</section>
+  </section>
+</main>
 
 <!-- Footer -->
-<footer class="text-center py-3 bg-dark text-light">
-  <p>© 2025 Arjun Unnikrishnan | Built with ❤️ using HTML, CSS & Bootstrap</p>
+<footer class="text-center text-light py-3 bg-dark">
+  <small>© 2025 Arjun Unnikrishnan | Made with 💙</small>
 </footer>
 
 <script src="script.js"></script>
