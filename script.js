@@ -1,10 +1,12 @@
 function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
+  document.body.classList.toggle("bg-dark");
+  document.body.classList.toggle("text-light");
+  document.body.classList.toggle("text-dark");
 }
 
 function copyEmail(event) {
   event.preventDefault();
-  const email = "youremail@example.com";
+  const email = "arjun.yourmail@example.com"; // Replace with your real email
   navigator.clipboard.writeText(email).then(() => {
     alert("Email copied to clipboard: " + email);
   });
