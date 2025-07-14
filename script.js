@@ -115,25 +115,37 @@ document.querySelectorAll('a.nav-link').forEach(link => {
 // Function moved outside and now part of window scope or module if needed.
 // It's called by handleScroll when stats section comes into view.
 function animateCounters() {
-    const counters = document.querySelectorAll(".counter");
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute("data-target");
-            let count = +counter.innerText; // Use 'let' to allow modification
-            const increment = Math.ceil(target / 60); // Adjust speed/increment as needed
+  const counters = document.querySelectorAll(".counter");
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute("data-target");
+      let count = +counter.innerText;
+      const increment = Math.ceil(target / 60); // Adjust 60 for speed (higher = slower)
 
-            if (count < target) {
-                counter.innerText = count + increment;
-                setTimeout(updateCount, 30); // Slower interval for smoother animation
-            } else {
-                counter.innerText = target; // Ensure final number is exact
-            }
-        };
-        updateCount();
-    });
+      if (count < target) {
+        counter.innerText = count + increment;
+        setTimeout(updateCount, 30); // Adjust 30 for smoothness
+      } else {
+        counter.innerText = target; // Ensure exact final number
+      }
+    };
+    updateCount();
+  });
 }
-// Global flag to prevent re-running counters
-window.countersStarted = false;
+
+let countersStarted = false;
+
+window.addEventListener("scroll", () => {
+  const statsSection = document.querySelector(".stats-section");
+  if (!countersStarted && statsSection.getBoundingClientRect().top < window.innerHeight - 100) {
+    animateCounters();
+    countersStarted = true;
+  }
+});
+
+// Trigger scroll event on page load in case stats are already visible
+window.dispatchEvent(new Event('scroll'));
+
 
 // Typing caret animation for typewriter text
 // This CSS is added directly in JavaScript to ensure it's loaded after element is available
