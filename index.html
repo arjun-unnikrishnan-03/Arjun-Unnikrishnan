@@ -24,145 +24,211 @@
 <div id="progressBar"></div>
 
 <!-- Navigation -->
-<nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow">
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow fixed-top">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">Arjun U.</a>
-    <div class="ms-auto">
-      <a class="nav-link text-white" href="#about">About</a>
-      <a class="nav-link text-white" href="#projects">Projects</a>
-      <a class="nav-link text-white" href="#blog">Blog</a>
-      <a class="nav-link text-white" href="#contact">Contact</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#blog">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
 
 <!-- Hero -->
 <header class="text-center text-white hero-section">
-  <img src="assets/profile.jpeg" class="rounded-circle shadow-lg mb-3" width="130" alt="profile" />
+  <img src="assets/profile.jpeg" class="rounded-circle shadow-lg mb-3 profile-hero-img" width="130" alt="profile" />
   <h1 class="display-4 fw-bold">Arjun Unnikrishnan</h1>
   <p class="lead"><span class="typewriter-text"></span></p>
-  <div class="mt-3">
-    <a href="assets/resume.pdf" download class="btn btn-outline-light me-2">📄 Resume</a>
-    <a href="https://github.com/arjun-unnikrishnan-03" target="_blank" class="btn btn-outline-light">GitHub</a>
-    <a href="https://www.linkedin.com/in/arjun-u03/" target="_blank" class="btn btn-outline-light">LinkedIn</a>
+  <div class="mt-4 d-flex justify-content-center flex-wrap gap-2">
+    <a href="assets/resume.pdf" download class="btn btn-outline-light btn-lg">📄 Resume</a>
+    <a href="https://github.com/arjun-unnikrishnan-03" target="_blank" class="btn btn-outline-light btn-lg">GitHub</a>
+    <a href="https://www.linkedin.com/in/arjun-u03/" target="_blank" class="btn btn-outline-light btn-lg">LinkedIn</a>
   </div>
 </header>
 
-<main class="container my-5 text-dark bg-white rounded shadow p-4">
-
+<main>
   <!-- About -->
-  <!-- About -->
-<section id="about" class="about-section reveal">
-  <div class="about-container glass-card">
-    <div class="about-left">
-      <img src="assets/profile.jpeg" alt="Arjun U" class="profile-img" />
-    </div>
-    <div class="about-right">
-      <h2><span>🚀</span> About Me</h2>
-      <p><strong>Hello! I'm <span class="highlight">Arjun U</span></strong>, a passionate software engineer & AI enthusiast. I aim to create impactful digital solutions and become the best version of myself.</p>
+  <section id="about" class="about-section reveal py-5">
+    <div class="container">
+      <div class="about-container glass-card">
+        <div class="about-left">
+          <img src="assets/profile.jpeg" alt="Arjun U" class="profile-img" />
+        </div>
+        <div class="about-right">
+          <h2><span>🚀</span> About Me</h2>
+          <p><strong>Hello! I'm <span class="highlight">Arjun U</span></strong>, a passionate software engineer & AI enthusiast. I aim to create impactful digital solutions and become the best version of myself.</p>
 
-      <ul class="about-points">
-        <li>🎓 <strong>MCA Graduate</strong></li>
-        <li>💻 .NET Full-Stack Developer — ASP.NET Core, MVC, Web API</li>
-        <li>🧠 Interested in AI, ML, NLP, and Analytics</li>
-        <li>⚙️ Skilled in C#, Python, Angular, Bootstrap, SQL</li>
-      </ul>
+          <ul class="about-points">
+            <li>🎓 <strong>MCA Graduate</strong></li>
+            <li>💻 .NET Full-Stack Developer — ASP.NET Core, MVC, Web API</li>
+            <li>🧠 Interested in AI, ML, NLP, and Analytics</li>
+            <li>⚙️ Skilled in C#, Python, Angular, Bootstrap, SQL</li>
+          </ul>
 
-      <div class="skill-badges">
-        <span class="badge">C#</span>
-        <span class="badge">Python</span>
-        <span class="badge">Angular</span>
-        <span class="badge">Entity Framework</span>
-        <span class="badge">SQL Server</span>
-        <span class="badge">GitHub</span>
+          <div class="skill-badges mt-4">
+            <span class="badge">C#</span>
+            <span class="badge">Python</span>
+            <span class="badge">Angular</span>
+            <span class="badge">Entity Framework</span>
+            <span class="badge">SQL Server</span>
+            <span class="badge">GitHub</span>
+          </div>
+
+          <p class="tagline mt-4"><em>"I code with purpose, learn with passion, and grow with every challenge."</em></p>
+        </div>
       </div>
-
-      <p class="tagline"><em>"I code with purpose, learn with passion, and grow with every challenge."</em></p>
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-<section class="text-center my-5 reveal" id="stats">
-  <h2 class="mb-4">My Stats</h2>
-  <div class="row justify-content-center">
-    <div class="col-md-3 mb-3">
-      <h3><span class="counter" data-target="6">0</span>+</h3>
-      <p>Projects Completed</p>
+  <!-- Stats -->
+  <section class="text-center my-5 reveal stats-section py-5">
+    <div class="container">
+      <h2 class="mb-5 text-white">My Stats</h2>
+      <div class="row justify-content-center text-white">
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h3 class="display-4 fw-bold"><span class="counter" data-target="6">0</span>+</h3>
+          <p class="lead">Projects Completed</p>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h3 class="display-4 fw-bold"><span class="counter" data-target="2">0</span>+</h3>
+          <p class="lead">Years Experience</p>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-4">
+          <h3 class="display-4 fw-bold"><span class="counter" data-target="10">0</span>+</h3>
+          <p class="lead">Technologies Used</p>
+        </div>
+      </div>
     </div>
-    <div class="col-md-3 mb-3">
-      <h3><span class="counter" data-target="2">0</span>+</h3>
-      <p>Years Experience</p>
-    </div>
-    <div class="col-md-3 mb-3">
-      <h3><span class="counter" data-target="10">0</span>+</h3>
-      <p>Technologies Used</p>
-    </div>
-  </div>
-</section>
-
-
+  </section>
 
   <!-- Projects -->
-  <section id="projects" class="mb-5 reveal">
-    <h2 class="text-center mb-4">Projects</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card p-3 shadow-sm h-100">
-          <h5>Age and Gender Detection</h5>
-          <p>Detects age & gender using Python, OpenCV, and Deep Learning.</p>
-          <a href="projects/age-gender.html" class="btn btn-outline-primary btn-sm">Details</a>
-          <a href="https://github.com/arjun-unnikrishnan-03/age-gender-detection" class="btn btn-link btn-sm">GitHub</a>
+  <section id="projects" class="mb-5 reveal py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 text-white">Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 shadow-sm h-100 project-card">
+            <h5 class="card-title fw-bold">Age and Gender Detection</h5>
+            <p class="card-text text-muted">Detects age & gender using Python, OpenCV, and Deep Learning.</p>
+            <div class="mt-auto d-flex justify-content-start gap-2">
+              <a href="projects/age-gender.html" class="btn btn-info btn-sm">Details</a>
+              <a href="https://github.com/arjun-unnikrishnan-03/age-gender-detection" target="_blank" class="btn btn-outline-secondary btn-sm">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 shadow-sm h-100 project-card">
+            <h5 class="card-title fw-bold">Astrology Chatbot</h5>
+            <p class="card-text text-muted">Chatbot using LLM for astrology queries like marriage timing.</p>
+            <div class="mt-auto d-flex justify-content-start gap-2">
+              <a href="projects/astrology-chatbot.html" class="btn btn-info btn-sm">Details</a>
+              <a href="https://github.com/arjun-unnikrishnan-03/Astrology-prediction" target="_blank" class="btn btn-outline-secondary btn-sm">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more project cards here following the same structure -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4 shadow-sm h-100 project-card">
+            <h5 class="card-title fw-bold">Project Title 3</h5>
+            <p class="card-text text-muted">A short description of Project 3, highlighting its key features or technologies.</p>
+            <div class="mt-auto d-flex justify-content-start gap-2">
+              <a href="#" class="btn btn-info btn-sm">Details</a>
+              <a href="#" target="_blank" class="btn btn-outline-secondary btn-sm">GitHub</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card p-3 shadow-sm h-100">
-          <h5>Astrology Chatbot</h5>
-          <p>Chatbot using LLM for astrology queries like marriage timing.</p>
-          <a href="projects/astrology-chatbot.html" class="btn btn-outline-primary btn-sm">Details</a>
-          <a href="https://github.com/arjun-unnikrishnan-03/Astrology-prediction" class="btn btn-link btn-sm">GitHub</a>
-        </div>
+      <div class="text-center mt-5">
+        <a href="#" class="btn btn-primary btn-lg">View All Projects</a>
       </div>
     </div>
   </section>
 
   <!-- Blog -->
-  <section id="blog" class="mb-5 reveal">
-    <h2 class="text-center mb-3">Blog</h2>
-    <ul class="list-unstyled text-center">
-      <li><a href="blog/post1.html">How I Built My First AI Project</a></li>
-      <li><a href="blog/post2.html">Top 5 Tools Every Developer Should Know</a></li>
-    </ul>
+  <section id="blog" class="mb-5 reveal py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 text-white">Blog</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="blog-post-card card p-4 mb-4 shadow-sm">
+            <h5 class="fw-bold"><a href="blog/post1.html" class="text-decoration-none text-dark">How I Built My First AI Project</a></h5>
+            <p class="text-muted">Explore the journey of developing my initial AI project, from concept to deployment, and the lessons learned along the way.</p>
+            <small class="text-secondary">Published on: July 10, 2025</small>
+          </div>
+          <div class="blog-post-card card p-4 mb-4 shadow-sm">
+            <h5 class="fw-bold"><a href="blog/post2.html" class="text-decoration-none text-dark">Top 5 Tools Every Developer Should Know</a></h5>
+            <p class="text-muted">A curated list of essential development tools that have significantly boosted my productivity and workflow.</p>
+            <small class="text-secondary">Published on: June 25, 2025</small>
+          </div>
+          <div class="blog-post-card card p-4 mb-4 shadow-sm">
+            <h5 class="fw-bold"><a href="#" class="text-decoration-none text-dark">Understanding ASP.NET Core MVC Basics</a></h5>
+            <p class="text-muted">A beginner-friendly guide to getting started with ASP.NET Core MVC, covering its architecture and key components.</p>
+            <small class="text-secondary">Published on: June 1, 2025</small>
+          </div>
+          <div class="text-center mt-4">
+            <a href="#" class="btn btn-primary btn-lg">Read More Blog Posts</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Contact -->
   <a href="#contact" id="contactBtn">📬 Contact</a>
-  <section id="contact" class="reveal">
-    <h2 class="text-center mb-3">Contact Me</h2>
-    <form class="row g-3" onsubmit="copyEmail(event)">
-      <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Your Name" required />
-      </div>
-      <div class="col-md-6">
-        <input type="email" class="form-control" placeholder="Your Email" required />
-      </div>
-      <div class="col-12">
-        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
-      </div>
-      <div class="col-12 text-center">
-        <button class="btn btn-success">Send</button>
-        <p class="text-muted mt-2">This form copies my email to your clipboard.</p>
-      </div>
-    </form>
+  <section id="contact" class="reveal py-5">
+    <div class="container">
+      <h2 class="text-center mb-5 text-white">Contact Me</h2>
+      <form class="row g-4 justify-content-center glass-card p-5" onsubmit="copyEmail(event)">
+        <div class="col-md-6">
+          <label for="contactName" class="form-label text-white">Your Name</label>
+          <input type="text" class="form-control" id="contactName" placeholder="John Doe" required />
+        </div>
+        <div class="col-md-6">
+          <label for="contactEmail" class="form-label text-white">Your Email</label>
+          <input type="email" class="form-control" id="contactEmail" placeholder="john.doe@example.com" required />
+        </div>
+        <div class="col-12">
+          <label for="contactMessage" class="form-label text-white">Your Message</label>
+          <textarea class="form-control" id="contactMessage" rows="5" placeholder="Type your message here..." required></textarea>
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-success btn-lg mt-3">Send Message</button>
+          <p class="text-muted mt-3 text-white-50">Clicking "Send Message" will copy my email address to your clipboard.</p>
+        </div>
+      </form>
+    </div>
   </section>
 </main>
 
 <!-- Footer -->
-<footer class="text-center text-light py-3 bg-dark">
-  <small>© 2025 Arjun Unnikrishnan | Made with 💙</small>
+<footer class="text-center text-light py-4 bg-dark">
+  <div class="container">
+    <small>© 2025 Arjun Unnikrishnan | Made with 💙</small>
+    <div class="social-links mt-2">
+      <a href="https://github.com/arjun-unnikrishnan-03" target="_blank" class="text-light mx-2"><i class="fab fa-github fa-lg"></i></a>
+      <a href="https://www.linkedin.com/in/arjun-u03/" target="_blank" class="text-light mx-2"><i class="fab fa-linkedin fa-lg"></i></a>
+      <!-- Add more social links as needed -->
+    </div>
+  </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script> <!-- Add your Font Awesome kit here -->
 <script src="script.js"></script>
 </body>
 </html>
