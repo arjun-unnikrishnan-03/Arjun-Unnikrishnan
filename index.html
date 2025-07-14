@@ -3,89 +3,163 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arjun Unnikrishnan – Portfolio</title>
-
-  <!-- Bootstrap + main stylesheet -->
+  <title>Arjun Unnikrishnan - Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
+<div id="progressBar"></div>
 
 <body>
-  <!-- ▾▾ pre‑loader ▾▾ -->
-  <div id="preloader"><div class="spinner"></div></div>
+<div id="preloader">
+  <div class="spinner"></div>
+</div>
 
-  <!-- ▾▾ scroll progress ▾▾ -->
-  <div id="progressBar"></div>
+<!-- Background Video -->
+<video autoplay muted id="bgVideo">
+  <source src="assets/background.mp4" type="video/mp4" />
+</video>
 
-  <!-- ▾▾ background video ▾▾ -->
-  <video autoplay muted loop id="bgVideo">
-    <source src="assets/background.mp4" type="video/mp4" />
-  </video>
-  <div class="overlay"></div>
 
-  <!-- ▾▾ navbar ▾▾ -->
-  <nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Arjun U.</a>
-      <div class="ms-auto">
-        <a class="nav-link text-white" href="#about">About</a>
-        <a class="nav-link text-white" href="#projects">Projects</a>
-        <a class="nav-link text-white" href="#blog">Blog</a>
-        <a class="nav-link text-white" href="#contact">Contact</a>
+<!-- Overlay -->
+<div class="overlay"></div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Arjun U.</a>
+    <div class="ms-auto">
+      <a class="nav-link text-white" href="#about">About</a>
+      <a class="nav-link text-white" href="#projects">Projects</a>
+      <a class="nav-link text-white" href="#blog">Blog</a>
+      <a class="nav-link text-white" href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="text-center text-white hero-section">
+  <img src="assets/profile.jpeg" class="rounded-circle shadow-lg mb-3" width="130" alt="profile" />
+  <h1 class="display-4 fw-bold">Arjun Unnikrishnan</h1>
+  <p class="lead"><span class="typewriter-text"></span></p>
+  <div class="mt-3">
+    <a href="assets/resume.pdf" download class="btn btn-outline-light me-2">📄 Resume</a>
+    <a href="https://github.com/arjun-unnikrishnan-03" target="_blank" class="btn btn-outline-light">GitHub</a>
+    <a href="https://www.linkedin.com/in/arjun-u03/" target="_blank" class="btn btn-outline-light">LinkedIn</a>
+  </div>
+</header>
+
+<main class="container my-5 text-dark bg-white rounded shadow p-4">
+
+  <!-- About -->
+  <section id="about" class="mb-5 reveal">
+  <h2 class="text-center mb-4">About Me</h2>
+  <div class="text-start px-3">
+    
+    <p><strong>👤 About Me</strong><br>
+    Hello! I’m <strong>Arjun U</strong>, a passionate and evolving software engineer and AI enthusiast on a mission to create impactful digital solutions while growing into the best version of myself—technically, professionally, and personally.</p>
+
+    <p><strong>🚀 My Journey So Far</strong><br>
+    From completing my Master of Computer Applications (MCA) to diving deep into the real-world tech industry, my journey has been a blend of structured learning, practical experiences, and relentless curiosity. I've explored multiple technologies, built intelligent systems like age and gender detection models, and continuously expanded my skill set across software development, AI/ML, and web technologies.</p>
+
+    <p>I am currently undergoing an intense .NET full-stack developer training program, covering modules like ASP.NET Core MVC, Web API, Entity Framework, Angular, DevOps (Jenkins), and Microservices—along with daily challenges and capstone projects.</p>
+
+    <p><strong>🧠 Technical Arsenal</strong><br>
+    I specialize in building clean, efficient, and scalable software solutions. My core stack includes:</p>
+    <ul>
+      <li><strong>Languages:</strong> C#, Python, Java (basic)</li>
+      <li><strong>Web:</strong> HTML, CSS, JavaScript, Bootstrap, Angular</li>
+      <li><strong>Frameworks:</strong> ASP.NET Core, MVC, Entity Framework, ADO.NET</li>
+      <li><strong>Databases:</strong> SQL Server, MySQL</li>
+      <li><strong>AI/ML & Data:</strong> Pandas, NumPy, TextBlob, Scikit-learn</li>
+      <li><strong>DevOps & Versioning:</strong> Git, GitHub, Jenkins (CI/CD)</li>
+      <li><strong>Tools:</strong> VS Code, Visual Studio, Postman, Jupyter Notebook, Anaconda</li>
+    </ul>
+
+    <p><strong>Special Projects:</strong> Age & gender prediction using computer vision, astrology-focused chatbot using LLM, and this animated portfolio site.</p>
+
+    <p><strong>Currently learning:</strong> Data cleaning, NLP preprocessing (stemming, lemmatization, POS tagging), and competitive coding through LeetCode and HackerRank (45+ MCQs + coding per day).</p>
+
+    <p><strong>🌍 Career Vision</strong><br>
+    My dream is to work at <strong>Google</strong> (roles like ST-1/ST-2) where I can contribute to AI, scalable backend systems, and cutting-edge technologies. I aim to reach a 30 LPA salary by 2027, backed by deep skills and leadership.</p>
+
+    <p><strong>💡 Personal Values & Traits</strong></p>
+    <ul>
+      <li><strong>Growth-Minded:</strong> Working on discipline, breaking bad habits, and improving communication.</li>
+      <li><strong>Self-Aware:</strong> I've overcome challenges like job loss, family burdens, and late-night habits.</li>
+      <li><strong>Curious:</strong> Exploring stock markets, German language, and aiming for GATE with IIT Madras.</li>
+      <li><strong>Resilient:</strong> Life's tests made me stronger, more empathetic, and focused.</li>
+    </ul>
+
+    <p><strong>🌱 Beyond Code</strong><br>
+    I love reading self-development books like <em>Atomic Habits</em>, enjoy nature, sunsets, and music for healing, and am currently focused on overcoming distractions and building a better version of myself with mindfulness and consistency.</p>
+
+    <p><strong>🔗 Let’s Connect</strong><br>
+    I’m not just another developer—I’m someone who’s willing to learn, unlearn, and rebuild. Whether you're a mentor, recruiter, or learner—I'd love to connect and grow together!</p>
+
+  </div>
+</section>
+
+
+  <!-- Projects -->
+  <section id="projects" class="mb-5 reveal">
+    <h2 class="text-center mb-4">Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card p-3 shadow-sm h-100">
+          <h5>Age and Gender Detection</h5>
+          <p>Detects age & gender using Python, OpenCV, and Deep Learning.</p>
+          <a href="projects/age-gender.html" class="btn btn-outline-primary btn-sm">Details</a>
+          <a href="https://github.com/arjun-unnikrishnan-03/age-gender-detection" class="btn btn-link btn-sm">GitHub</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-3 shadow-sm h-100">
+          <h5>Astrology Chatbot</h5>
+          <p>Chatbot using LLM for astrology queries like marriage timing.</p>
+          <a href="projects/astrology-chatbot.html" class="btn btn-outline-primary btn-sm">Details</a>
+          <a href="https://github.com/arjun-unnikrishnan-03/Astrology-prediction" class="btn btn-link btn-sm">GitHub</a>
+        </div>
       </div>
     </div>
-  </nav>
+  </section>
 
-  <!-- ▾▾ hero ▾▾ -->
-  <header class="text-center text-white hero-section">
-    <img src="assets/profile.jpeg" class="rounded-circle shadow-lg mb-3" width="130" alt="Profile" />
-    <h1 class="display-4 fw-bold">Arjun Unnikrishnan</h1>
-    <p class="lead"><span class="typewriter-text"></span></p>
-    <div class="mt-3">
-      <a href="assets/resume.pdf" download class="btn btn-outline-light me-2">📄 Resume</a>
-      <a href="https://github.com/arjun-unnikrishnan-03" class="btn btn-outline-light" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/arjun-u03/" class="btn btn-outline-light" target="_blank">LinkedIn</a>
-    </div>
-  </header>
+  <!-- Blog -->
+  <section id="blog" class="mb-5">
+    <h2 class="text-center mb-3">Blog</h2>
+    <ul class="list-unstyled text-center">
+      <li><a href="blog/post1.html">How I Built My First AI Project</a></li>
+      <li><a href="blog/post2.html">Top 5 Tools Every Developer Should Know</a></li>
+    </ul>
+  </section>
 
-  <main class="container my-5 text-dark bg-white rounded shadow p-4">
+  <!-- Contact -->
+   <a href="#contact" id="contactBtn">📬 Contact</a>
 
-    <!-- About -->
-    <section id="about" class="mb-5 reveal">
-      <!-- …(your nicely‑formatted About Me content exactly as provided)… -->
-    </section>
+  <section id="contact">
+    <h2 class="text-center mb-3">Contact Me</h2>
+    <form class="row g-3" onsubmit="copyEmail(event)">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Your Name" required />
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" placeholder="Your Email" required />
+      </div>
+      <div class="col-12">
+        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button class="btn btn-success">Send</button>
+        <p class="text-muted mt-2">This form copies my email to your clipboard.</p>
+      </div>
+    </form>
+  </section>
+</main>
 
-    <!-- Projects -->
-    <section id="projects" class="mb-5 reveal">
-      <!-- …(cards) … -->
-    </section>
+<!-- Footer -->
+<footer class="text-center text-light py-3 bg-dark">
+  <small>© 2025 Arjun Unnikrishnan | Made with 💙</small>
+</footer>
 
-    <!-- Blog -->
-    <section id="blog" class="mb-5 reveal">
-      <!-- …(links) … -->
-    </section>
-
-    <!-- Contact -->
-    <a href="#contact" id="contactBtn">📬 Contact</a>
-
-    <section id="contact" class="reveal">
-      <h2 class="text-center mb-3">Contact Me</h2>
-      <form class="row g-3" onsubmit="copyEmail(event)">
-        <div class="col-md-6"><input class="form-control" placeholder="Your Name" required></div>
-        <div class="col-md-6"><input type="email" class="form-control" placeholder="Your Email" required></div>
-        <div class="col-12"><textarea class="form-control" rows="4" placeholder="Your Message" required></textarea></div>
-        <div class="col-12 text-center">
-          <button class="btn btn-success">Send</button>
-          <p class="text-muted mt-2">This form copies my email to your clipboard.</p>
-        </div>
-      </form>
-    </section>
-  </main>
-
-  <footer class="text-center text-light py-3 bg-dark">
-    <small>© 2025 Arjun Unnikrishnan | Made with 💙</small>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
