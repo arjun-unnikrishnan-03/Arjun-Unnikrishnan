@@ -1,31 +1,20 @@
 // Preloader
 window.onload = () => {
-  document.getElementById('preloader').style.display = 'none';
+  document.getElementById("preloader").style.display = "none";
 };
 
-// Scroll Progress Bar
-window.onscroll = function () {
-  const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-  document.getElementById("progressBar").style.width = scrolled + "%";
+// Scroll Progress
+window.onscroll = () => {
+  const scroll = document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const percent = (scroll / height) * 100;
+  document.getElementById("scroll-bar").style.width = percent + "%";
 };
 
-// Typewriter Effect
-const text = "Arjun Unnikrishnan";
-let index = 0;
-
-function typeWriter() {
-  if (index < text.length) {
-    document.getElementById("typewriter").innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, 100);
-  }
-}
-typeWriter();
-
-// Contact email copy
-function copyEmail(e) {
-  e.preventDefault();
-  const email = "your@email.com"; // Replace this
-  navigator.clipboard.writeText(email);
-  alert("📧 Email copied to clipboard!");
+// Copy email on form submit
+function copyEmail(event) {
+  event.preventDefault();
+  navigator.clipboard.writeText("arjun@example.com").then(() => {
+    alert("Email copied to clipboard!");
+  });
 }
