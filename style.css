@@ -84,3 +84,10 @@ body, html {
 #contactBtn:hover {
   background: #0bbbd1;
 }
+#about .badge {
+  font-size: 0.8rem;
+  margin: 2px;
+}
+#about img {
+  border: 4px solid #fff;
+}
