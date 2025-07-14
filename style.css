@@ -10,11 +10,12 @@ body, html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;       /* Full screen width */
-  height: 100vh;      /* Full screen height */
-  object-fit: cover;  /* Crop and fill entire space */
-  z-index: -1;        /* Put it behind everything */
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
+
 
 
 /* Overlay for contrast */
