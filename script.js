@@ -1,3 +1,4 @@
+// 📋 Copy Email on Form Submit
 function copyEmail(event) {
   event.preventDefault();
   navigator.clipboard.writeText("arjun.u1968@gmail.com").then(() => {
@@ -5,49 +6,43 @@ function copyEmail(event) {
   });
 }
 
-/* copyEmail unchanged */
-function copyEmail(event) { /* ... */ }
-
-/* --- TYPEWRITER (one‑time) --- */
+// 🖋️ Typewriter Effect (run once, then show all)
 const textArray = ["AI Enthusiast", "Software Developer", "Creative Thinker"];
-let i = 0, j = 0, currentText = "", isDeleting = false, delay = 100;
+let i = 0, j = 0;
+let currentText = "";
 
 function typeOnce() {
-  if (!isDeleting && j <= textArray[i].length) {
+  if (i >= textArray.length) {
+    // ✅ Show all phrases after animation ends
+    document.querySelector(".typewriter-text").innerHTML = textArray.join(" | ");
+    return;
+  }
+
+  if (j <= textArray[i].length) {
     currentText = textArray[i].substring(0, j++);
-  } else if (isDeleting && j >= 0) {
-    currentText = textArray[i].substring(0, j--);
-  }
-  document.querySelector(".typewriter-text").innerHTML = currentText + "|";
-
-  if (j === textArray[i].length && !isDeleting) {
-    i++;
-    if (i < textArray.length) {  // next word
-      isDeleting = false;
+    document.querySelector(".typewriter-text").innerHTML = currentText + "|";
+    setTimeout(typeOnce, 100); // typing speed
+  } else {
+    // ✅ Wait before moving to next word
+    setTimeout(() => {
+      i++;
       j = 0;
-      setTimeout(typeOnce, 1000);
-      return;
-    } else {                     // finished all words
-      document.querySelector(".typewriter-text").innerHTML = textArray.join(" | ");
-      return;
-    }
+      currentText = "";
+      typeOnce();
+    }, 1000);
   }
-  setTimeout(typeOnce, isDeleting ? 50 : 100);
 }
-window.addEventListener("load", typeOnce);
 
-/* --- onload (preloader + dark mode) --- */
+// 🌑 Dark Mode Memory + Preloader
 window.onload = () => {
+  typeOnce();
   document.getElementById("preloader").style.display = "none";
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
   }
 };
 
-
-
-
-// Scroll Progress & Reveal
+// 🔄 Scroll Reveal + Progress Bar
 window.onscroll = function () {
   const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
   const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -60,7 +55,7 @@ window.onscroll = function () {
   });
 };
 
-// Smooth Scroll
+// 🔗 Smooth Scroll for Nav Links
 document.querySelectorAll('a.nav-link').forEach(link => {
   link.addEventListener('click', function (e) {
     if (this.hash !== "") {
@@ -69,14 +64,15 @@ document.querySelectorAll('a.nav-link').forEach(link => {
     }
   });
 });
-// Counter Animation
+
+// 🔢 Animated Counters
 function animateCounters() {
   const counters = document.querySelectorAll(".counter");
   counters.forEach(counter => {
     const updateCount = () => {
       const target = +counter.getAttribute("data-target");
       const count = +counter.innerText;
-      const speed = 200; // lower = faster
+      const speed = 200;
       const increment = Math.ceil(target / speed);
 
       if (count < target) {
@@ -90,6 +86,7 @@ function animateCounters() {
   });
 }
 
+// ⏱️ Trigger counters on scroll
 window.addEventListener("scroll", () => {
   const statsSection = document.getElementById("stats");
   if (statsSection && statsSection.getBoundingClientRect().top < window.innerHeight - 100) {
