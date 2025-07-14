@@ -11,7 +11,7 @@ function copyEmail(event) {
 }
 
 // 🖋️ Typewriter Effect (Improved Loop)
-const textArray = ["AI Enthusiast", "Software Developer", "Problem Solver"]; // Changed one for variety
+const textArray = ["AI Enthusiast", "Software Developer", "Creative Thinker"]; // Changed one for variety
 let textIndex = 0; // Current text in textArray
 let charIndex = 0; // Current character being typed
 let isDeleting = false;
