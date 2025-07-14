@@ -9,28 +9,39 @@ const textArray = ["AI Enthusiast", "Software Developer", "Creative Thinker"];
 let i = 0, j = 0;
 let currentText = "";
 let isDeleting = false;
+let delay = 100;
 
 function type() {
-  if (i < textArray.length) {
-    if (!isDeleting && j <= textArray[i].length) {
-      currentText = textArray[i].substring(0, j++);
-    } else if (isDeleting && j >= 0) {
-      currentText = textArray[i].substring(0, j--);
-    }
+  if (i >= textArray.length) i = 0;
 
-    document.querySelector(".typewriter-text").innerHTML = currentText + "|";
-
-    if (j === textArray[i].length) {
-      isDeleting = true;
-      setTimeout(type, 1000);
-    } else if (j === 0 && isDeleting) {
-      isDeleting = false;
-      i = (i + 1) % textArray.length;
-    }
-
-    setTimeout(type, isDeleting ? 50 : 100);
+  if (!isDeleting && j <= textArray[i].length) {
+    currentText = textArray[i].substring(0, j++);
+    delay = 100; // Typing speed
+  } else if (isDeleting && j >= 0) {
+    currentText = textArray[i].substring(0, j--);
+    delay = 50; // Deleting speed
   }
+
+  document.querySelector(".typewriter-text").innerHTML = currentText + "|";
+
+  // Pause after full word typed
+  if (j === textArray[i].length && !isDeleting) {
+    isDeleting = true;
+    delay = 1200; // Pause before deleting
+  }
+
+  // Pause before typing next word
+  if (j === 0 && isDeleting) {
+    isDeleting = false;
+    i++;
+    delay = 500;
+  }
+
+  setTimeout(type, delay);
 }
+
+window.addEventListener("load", type);
+
 
 window.onload = () => {
   type();
