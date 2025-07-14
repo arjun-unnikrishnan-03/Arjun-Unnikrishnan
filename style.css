@@ -1,8 +1,12 @@
+/* ---------------- General Layout ---------------- */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
 }
+
+/* ---------------- Background Video ---------------- */
 #bgVideo {
   position: fixed;
   top: 0;
@@ -21,14 +25,20 @@ body, html {
   background: rgba(0, 0, 0, 0.5);
   z-index: -1;
 }
+
+/* ---------------- Hero Section ---------------- */
 .hero-section {
-  padding: 100px 20px 60px;
+  padding: 120px 20px 60px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 .typewriter-text {
   font-weight: bold;
   border-right: 2px solid #fff;
   white-space: nowrap;
+  font-size: 1.2rem;
 }
+
+/* ---------------- Progress Bar ---------------- */
 #progressBar {
   position: fixed;
   top: 0;
@@ -39,15 +49,19 @@ body, html {
   z-index: 9999;
   transition: width 0.25s ease-out;
 }
+
+/* ---------------- Reveal on Scroll ---------------- */
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(30px);
   transition: all 0.8s ease;
 }
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ---------------- Preloader ---------------- */
 #preloader {
   background: #000;
   height: 100vh;
@@ -69,6 +83,8 @@ body, html {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* ---------------- Floating Contact Button ---------------- */
 #contactBtn {
   position: fixed;
   bottom: 20px;
@@ -84,61 +100,53 @@ body, html {
 #contactBtn:hover {
   background: #0bbbd1;
 }
-#about .badge {
-  font-size: 0.8rem;
-  margin: 2px;
-}
-#about img {
-  border: 4px solid #fff;
-}
-/* About Section Container */
+
+/* ---------------- About Section (Updated) ---------------- */
 .about-section {
   padding: 80px 0;
   position: relative;
   z-index: 2;
+  color: #fff;
 }
-
-/* Responsive Column Layout */
+.about-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #0dcaf0;
+}
 .about-section .row {
   display: flex;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }
-
-/* About Text Card */
+.about-section .about-image-container img {
+  max-width: 200px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+.about-section .about-image-container img:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
 .about-section .about-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(13, 202, 240, 0.1);
-  color: #fff;
   transition: all 0.3s ease;
 }
-
 .about-section .about-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(13, 202, 240, 0.2);
 }
-
-/* Headings */
-.about-section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  color: #0dcaf0;
-}
-
-/* Paragraphs and List */
 .about-section p,
 .about-section li {
   font-size: 1rem;
   line-height: 1.7;
   color: #ddd;
 }
-
-/* Skill Badges */
 .about-section .badges {
   margin-top: 15px;
 }
@@ -153,13 +161,25 @@ body, html {
   display: inline-block;
 }
 
-/* Profile Image */
-.about-section .about-image-container img {
-  max-width: 200px;
-  border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.15);
-  transition: all 0.3s ease;
+/* ---------------- Footer ---------------- */
+footer {
+  position: relative;
+  z-index: 2;
+  background-color: #000;
+  color: #ccc;
 }
-.about-section .about-image-container img:hover {
-  transform: scale(1.05) rotate(-2deg);
+
+/* ---------------- Dark Mode ---------------- */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+.dark-mode .card,
+.dark-mode .about-card {
+  background-color: #1e1e1e;
+  color: white;
+}
+.dark-mode .badge {
+  background-color: #0dcaf0;
+  color: #000;
 }
