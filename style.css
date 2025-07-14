@@ -1,0 +1,10 @@
+body.dark-mode {
+  background-color: #121212 !important;
+  color: white !important;
+}
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.02);
+}
