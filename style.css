@@ -1,10 +1,60 @@
-body.dark-mode {
+/* General Enhancements */
+body {
+  transition: background 0.4s, color 0.4s;
+}
+
+h2 {
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  margin: 0 10px;
+  color: #333;
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.hover-effect:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.hero-bg {
+  background: linear-gradient(to right, #e0f7fa, #fff);
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode styles */
+body.bg-dark {
   background-color: #121212 !important;
-  color: white !important;
+  color: #f1f1f1;
 }
-.card {
-  transition: transform 0.2s ease-in-out;
+body.bg-dark .navbar {
+  background-color: #222 !important;
 }
-.card:hover {
-  transform: scale(1.02);
+body.bg-dark a, body.bg-dark .social-icons a {
+  color: #f1f1f1;
+}
+body.bg-dark .card {
+  background-color: #1e1e1e;
+  color: #fff;
 }

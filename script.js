@@ -6,7 +6,7 @@ function toggleDarkMode() {
 
 function copyEmail(event) {
   event.preventDefault();
-  const email = "arjun.yourmail@example.com"; // Replace with your real email
+  const email = "your-email@example.com"; // Replace with your real email
   navigator.clipboard.writeText(email).then(() => {
     alert("Email copied to clipboard: " + email);
   });
