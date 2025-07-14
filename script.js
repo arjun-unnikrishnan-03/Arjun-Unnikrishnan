@@ -117,23 +117,25 @@ document.querySelectorAll('a.nav-link').forEach(link => {
 function animateCounters() {
   const counters = document.querySelectorAll(".counter");
   counters.forEach(counter => {
+    const target = +counter.getAttribute("data-target");
+    let count = 0; // Reset on each hover
+    const increment = target / 100; // Divide into 100 steps
+    counter.innerText = "0";
+
     const updateCount = () => {
-      const target = +counter.getAttribute("data-target");
-      let count = +counter.innerText;
-
-
-      const increment = Math.ceil(target / 60); // Adjust 60 for speed (higher = slower)
-
       if (count < target) {
-        counter.innerText = count + increment;
-        setTimeout(updateCount, 30); // Adjust 30 for smoothness
+        count += increment;
+        counter.innerText = Math.ceil(count); // Round up
+        setTimeout(updateCount, 15); // Speed (lower = faster)
       } else {
-        counter.innerText = target; // Ensure exact final number
+        counter.innerText = target; // Ensure exact target
       }
     };
+
     updateCount();
   });
 }
+
 
 // 🎯 Trigger counter animation on mouse hover
 const statsSection = document.querySelector(".stats-section");
@@ -143,6 +145,7 @@ if (statsSection) {
     animateCounters();
   });
 }
+
 
 
 
