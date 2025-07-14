@@ -120,11 +120,11 @@ function animateCounters() {
     const updateCount = () => {
       const target = +counter.getAttribute("data-target");
       let count = +counter.innerText;
-      const increment = Math.ceil(target / 60); // Adjust 60 for speed (higher = slower)
+      const increment = Math.ceil(target / 120); // Adjust 60 for speed (higher = slower)
 
       if (count < target) {
         counter.innerText = count + increment;
-        setTimeout(updateCount, 30); // Adjust 30 for smoothness
+        setTimeout(updateCount, 10); // Adjust 30 for smoothness
       } else {
         counter.innerText = target; // Ensure exact final number
       }
