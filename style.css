@@ -295,7 +295,7 @@ section p {
 
 /* ---------------- Stats Section ---------------- */
 .stats-section {
-    background: rgba(0, 0, 0, 0.4); /* Darker background for distinction */
+    background: rgba(255, 251, 251, 0.4); /* Darker background for distinction */
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 60px 0;
@@ -312,50 +312,71 @@ section p {
 }
 
 /* ---------------- Project Cards ---------------- */
-.project-card, .blog-post-card {
-    background: var(--glass-bg-dark);
-    border: 1px solid var(--glass-border-dark);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 15px;
-    color: var(--light-text);
+/* Make all card backgrounds more opaque and lighter */
+.project-card, .glass-card, .blog-post-card {
+    background: rgba(30, 30, 30, 0.88); /* dark but more readable */
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(26,35,126,0.06);
     padding: 30px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
-.project-card:hover, .blog-post-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.1);
+
+/* Headings and main sentences pure white */
+.project-card .card-title,
+.project-card .card-text,
+.blog-post-card .fw-bold a,
+.blog-post-card p,
+h2, h3, h4, h5, h6 {
+    color: #fff !important;
 }
-.project-card .card-title {
-    color: var(--primary-color);
-    font-size: 1.5rem;
+
+/* Make body text (card-text) white */
+.project-card .card-text,
+.blog-post-card p {
+    color: #fff !important;
 }
-.project-card .card-text {
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 20px;
+
+/* Meta info (like published date) in whitish grey */
+.blog-post-card small,
+.project-card .meta,
+.text-muted,
+.text-secondary {
+    color: #e0e0e0 !important;
+    font-size: 0.95em;
+    opacity: 0.85;
 }
-.project-card .btn-info {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--dark-text);
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+
+/* Buttons: make sure they're visible */
+.project-card .btn-info,
+.project-card .btn-primary,
+.blog-post-card .btn-info,
+.blog-post-card .btn-primary {
+    background: #1a237e;
+    color: #fff;
+    border: none;
 }
-.project-card .btn-info:hover {
-    background-color: #00b0d6;
-    border-color: #00b0d6;
+.project-card .btn-info:hover,
+.project-card .btn-primary:hover,
+.blog-post-card .btn-info:hover,
+.blog-post-card .btn-primary:hover {
+    background: #3949ab;
+    color: #fff;
 }
-.project-card .btn-outline-secondary {
-    color: var(--light-text);
-    border-color: rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
+
+/* For secondary/outline buttons */
+.project-card .btn-outline-secondary,
+.blog-post-card .btn-outline-secondary {
+    color: #fff;
+    border-color: #fff;
 }
-.project-card .btn-outline-secondary:hover {
-    background-color: var(--secondary-color);
-    color: var(--light-text);
-    border-color: var(--secondary-color);
+.project-card .btn-outline-secondary:hover,
+.blog-post-card .btn-outline-secondary:hover {
+    background: #fff;
+    color: #1a237e;
 }
+
 
 /* ---------------- Blog Section ---------------- */
 .blog-post-card .fw-bold a {
