@@ -91,50 +91,75 @@ body, html {
 #about img {
   border: 4px solid #fff;
 }
+/* About Section Container */
 .about-section {
-  color: #fff;
+  padding: 80px 0;
+  position: relative;
+  z-index: 2;
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.07);
+/* Responsive Column Layout */
+.about-section .row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* About Text Card */
+.about-section .about-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 30px;
   border-radius: 15px;
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(13, 202, 240, 0.1);
   color: #fff;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.glass-card:hover {
-  transform: scale(1.01);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+.about-section .about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(13, 202, 240, 0.2);
 }
 
-.badge {
-  background: #0dcaf0;
-  margin: 4px;
-  padding: 6px 10px;
-  border-radius: 20px;
+/* Headings */
+.about-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #0dcaf0;
+}
+
+/* Paragraphs and List */
+.about-section p,
+.about-section li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #ddd;
+}
+
+/* Skill Badges */
+.about-section .badges {
+  margin-top: 15px;
+}
+.about-section .badge {
+  font-weight: 500;
+  padding: 8px 14px;
   font-size: 0.85rem;
-  color: #fff;
+  background: #0dcaf0;
+  color: #000;
+  margin: 4px 6px 4px 0;
+  border-radius: 50px;
+  display: inline-block;
 }
 
-.profile-img {
-  max-width: 180px;
-  border: 5px solid rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s ease;
+/* Profile Image */
+.about-section .about-image-container img {
+  max-width: 200px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
 }
-
-.profile-img:hover {
-  transform: rotate(-2deg) scale(1.05);
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+.about-section .about-image-container img:hover {
+  transform: scale(1.05) rotate(-2deg);
 }
