@@ -5,52 +5,47 @@ function copyEmail(event) {
   });
 }
 
+/* copyEmail unchanged */
+function copyEmail(event) { /* ... */ }
+
+/* --- TYPEWRITER (one‑time) --- */
 const textArray = ["AI Enthusiast", "Software Developer", "Creative Thinker"];
-let i = 0, j = 0;
-let currentText = "";
-let isDeleting = false;
-let delay = 100;
+let i = 0, j = 0, currentText = "", isDeleting = false, delay = 100;
 
-function type() {
-  if (i >= textArray.length) return; // Stop after last word is shown
-
+function typeOnce() {
   if (!isDeleting && j <= textArray[i].length) {
     currentText = textArray[i].substring(0, j++);
-    delay = 100;
   } else if (isDeleting && j >= 0) {
     currentText = textArray[i].substring(0, j--);
-    delay = 50;
   }
-
   document.querySelector(".typewriter-text").innerHTML = currentText + "|";
 
   if (j === textArray[i].length && !isDeleting) {
-    if (i === textArray.length - 1) {
-      document.querySelector(".typewriter-text").innerHTML = textArray[i]; // Show last word only, stop blinking
+    i++;
+    if (i < textArray.length) {  // next word
+      isDeleting = false;
+      j = 0;
+      setTimeout(typeOnce, 1000);
+      return;
+    } else {                     // finished all words
+      document.querySelector(".typewriter-text").innerHTML = textArray.join(" | ");
       return;
     }
-    isDeleting = true;
-    delay = 1000;
   }
-
-  if (j === 0 && isDeleting) {
-    isDeleting = false;
-    i++;
-    delay = 500;
-  }
-
-  setTimeout(type, delay);
+  setTimeout(typeOnce, isDeleting ? 50 : 100);
 }
+window.addEventListener("load", typeOnce);
 
-
+/* --- onload (preloader + dark mode) --- */
 window.onload = () => {
-  type(); // ✅ Only one call
   document.getElementById("preloader").style.display = "none";
-
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
   }
 };
+
+
+
 
 // Scroll Progress & Reveal
 window.onscroll = function () {
