@@ -133,18 +133,15 @@ function animateCounters() {
   });
 }
 
-let countersStarted = false;
+// 🎯 Trigger counter animation on mouse hover
+const statsSection = document.querySelector(".stats-section");
 
-window.addEventListener("scroll", () => {
-  const statsSection = document.querySelector(".stats-section");
-  if (!countersStarted && statsSection.getBoundingClientRect().top < window.innerHeight - 100) {
+if (statsSection) {
+  statsSection.addEventListener("mouseenter", () => {
     animateCounters();
-    countersStarted = true;
-  }
-});
+  });
+}
 
-// Trigger scroll event on page load in case stats are already visible
-window.dispatchEvent(new Event('scroll'));
 
 
 // Typing caret animation for typewriter text
