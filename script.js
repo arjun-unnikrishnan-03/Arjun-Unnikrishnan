@@ -118,17 +118,17 @@ function animateCounters() {
   const counters = document.querySelectorAll(".counter");
   counters.forEach(counter => {
     const target = +counter.getAttribute("data-target");
-    let count = 0; // Reset on each hover
-    const increment = target / 100; // Divide into 100 steps
+    let count = 0;
+    const increment = target / 100;
     counter.innerText = "0";
 
     const updateCount = () => {
       if (count < target) {
         count += increment;
-        counter.innerText = Math.ceil(count); // Round up
-        setTimeout(updateCount, 15); // Speed (lower = faster)
+        counter.innerText = Math.ceil(count);
+        setTimeout(updateCount, 15);
       } else {
-        counter.innerText = target; // Ensure exact target
+        counter.innerText = target;
       }
     };
 
@@ -137,14 +137,28 @@ function animateCounters() {
 }
 
 
-// 🎯 Trigger counter animation on mouse hover
-const statsSection = document.querySelector(".stats-section");
 
-if (statsSection) {
-  statsSection.addEventListener("mouseenter", () => {
-    animateCounters();
-  });
+// 🎯 Trigger counter animation on mouse hover
+// ✅ Trigger counter animation when .stats-section scrolls into view
+let countersAnimated = false;
+
+function handleCounterTrigger() {
+  const statsSection = document.querySelector(".stats-section");
+  if (!countersAnimated && statsSection) {
+    const sectionTop = statsSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight - 100) {
+      animateCounters();
+      countersAnimated = true;
+    }
+  }
 }
+
+// ✅ Works on both mobile + desktop
+window.addEventListener("scroll", handleCounterTrigger);
+window.addEventListener("load", handleCounterTrigger);
+
 
 
 
