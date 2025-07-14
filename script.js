@@ -1,99 +1,152 @@
 // 📋 Copy Email on Form Submit
 function copyEmail(event) {
-  event.preventDefault();
-  navigator.clipboard.writeText("arjun.u1968@gmail.com").then(() => {
-    alert("Email copied to clipboard!");
-  });
+    event.preventDefault();
+    const email = "arjun.u1968@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+        alert("Email '" + email + "' copied to clipboard! You can now paste it into your email client.");
+    }).catch(err => {
+        console.error('Failed to copy email: ', err);
+        alert("Failed to copy email. Please manually copy: " + email);
+    });
 }
 
-// 🖋️ Typewriter Effect (run once, then show all)
-const textArray = ["AI Enthusiast", "Software Developer", "Creative Thinker"];
-let i = 0, j = 0;
-let currentText = "";
+// 🖋️ Typewriter Effect (Improved Loop)
+const textArray = ["AI Enthusiast", "Software Developer", "Problem Solver"]; // Changed one for variety
+let textIndex = 0; // Current text in textArray
+let charIndex = 0; // Current character being typed
+let isDeleting = false;
+const typewriterElement = document.querySelector(".typewriter-text");
+const typingSpeed = 100; // ms per character
+const deletingSpeed = 60; // ms per character
+const delayBeforeDelete = 1500; // ms to wait after typing
+const delayBeforeType = 500; // ms to wait before typing next
 
-function typeOnce() {
-  if (i >= textArray.length) {
-    // ✅ Show all phrases after animation ends
-    document.querySelector(".typewriter-text").innerHTML = textArray.join(" | ");
-    return;
-  }
+function typeWriterEffect() {
+    const currentWord = textArray[textIndex];
 
-  if (j <= textArray[i].length) {
-    currentText = textArray[i].substring(0, j++);
-    document.querySelector(".typewriter-text").innerHTML = currentText + "|";
-    setTimeout(typeOnce, 100); // typing speed
-  } else {
-    // ✅ Wait before moving to next word
-    setTimeout(() => {
-      i++;
-      j = 0;
-      currentText = "";
-      typeOnce();
-    }, 1000);
-  }
+    if (isDeleting) {
+        // Delete characters
+        typewriterElement.textContent = currentWord.substring(0, charIndex--);
+    } else {
+        // Type characters
+        typewriterElement.textContent = currentWord.substring(0, charIndex++);
+    }
+
+    // Add/remove blinking caret
+    typewriterElement.classList.toggle('typing-caret', !isDeleting || charIndex > 0);
+
+    let speed = isDeleting ? deletingSpeed : typingSpeed;
+
+    if (!isDeleting && charIndex === currentWord.length + 1) {
+        // Typed current word fully, now wait and start deleting
+        speed = delayBeforeDelete;
+        isDeleting = true;
+    } else if (isDeleting && charIndex === -1) {
+        // Deleted current word fully, move to next word
+        isDeleting = false;
+        textIndex = (textIndex + 1) % textArray.length;
+        speed = delayBeforeType;
+    }
+
+    setTimeout(typeWriterEffect, speed);
 }
 
-// 🌑 Dark Mode Memory + Preloader
+
+// 🌑 Preloader
 window.onload = () => {
-  typeOnce();
-  document.getElementById("preloader").style.display = "none";
-  if (localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-mode");
-  }
+    typeWriterEffect(); // Start typewriter effect
+    const preloader = document.getElementById("preloader");
+    if (preloader) {
+        preloader.style.display = "none";
+    }
 };
 
 // 🔄 Scroll Reveal + Progress Bar
-window.onscroll = function () {
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (scrollTop / scrollHeight) * 100;
-  document.getElementById("progressBar").style.width = scrolled + "%";
+function handleScroll() {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (scrollTop / scrollHeight) * 100;
+    const progressBar = document.getElementById("progressBar");
+    if (progressBar) {
+        progressBar.style.width = scrolled + "%";
+    }
 
-  document.querySelectorAll(".reveal").forEach((el) => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) el.classList.add("active");
-  });
-};
+    document.querySelectorAll(".reveal").forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 150) { // Adjusted offset for reveal
+            el.classList.add("active");
+        }
+    });
+
+    // Trigger counters on scroll
+    const statsSection = document.getElementById("stats");
+    if (!window.countersStarted && statsSection && statsSection.getBoundingClientRect().top < window.innerHeight - 100) {
+        animateCounters();
+        window.countersStarted = true; // Ensure it runs only once
+    }
+}
+
+// Add scroll event listener
+window.addEventListener("scroll", handleScroll);
+// Run handleScroll once on load to reveal elements already in view
+document.addEventListener("DOMContentLoaded", handleScroll);
+
 
 // 🔗 Smooth Scroll for Nav Links
 document.querySelectorAll('a.nav-link').forEach(link => {
-  link.addEventListener('click', function (e) {
-    if (this.hash !== "") {
-      e.preventDefault();
-      document.querySelector(this.hash).scrollIntoView({ behavior: "smooth" });
-    }
-  });
+    link.addEventListener('click', function (e) {
+        if (this.hash !== "") {
+            e.preventDefault();
+            const targetElement = document.querySelector(this.hash);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+                // Collapse navbar on mobile after clicking a link
+                const navbarToggler = document.querySelector('.navbar-toggler');
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarToggler && navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click(); // Simulate click to close
+                }
+            }
+        }
+    });
 });
 
 // 🔢 Animated Counters
+// Function moved outside and now part of window scope or module if needed.
+// It's called by handleScroll when stats section comes into view.
 function animateCounters() {
-  const counters = document.querySelectorAll(".counter");
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute("data-target");
-      const count = +counter.innerText;
-      const speed = 200;
-      const increment = Math.ceil(target / speed);
+    const counters = document.querySelectorAll(".counter");
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute("data-target");
+            let count = +counter.innerText; // Use 'let' to allow modification
+            const increment = Math.ceil(target / 60); // Adjust speed/increment as needed
 
-      if (count < target) {
-        counter.innerText = count + increment;
-        setTimeout(updateCount, 20);
-      } else {
-        counter.innerText = target;
-      }
-    };
-    updateCount();
-  });
+            if (count < target) {
+                counter.innerText = count + increment;
+                setTimeout(updateCount, 30); // Slower interval for smoother animation
+            } else {
+                counter.innerText = target; // Ensure final number is exact
+            }
+        };
+        updateCount();
+    });
 }
+// Global flag to prevent re-running counters
+window.countersStarted = false;
 
-// ⏱️ Trigger counters on scroll - only once
-let countersStarted = false;
-
-window.addEventListener("scroll", () => {
-  const statsSection = document.getElementById("stats");
-  if (!countersStarted && statsSection && statsSection.getBoundingClientRect().top < window.innerHeight - 100) {
-    animateCounters();
-    countersStarted = true; // Ensure it runs only once
-  }
-});
+// Typing caret animation for typewriter text
+// This CSS is added directly in JavaScript to ensure it's loaded after element is available
+const style = document.createElement('style');
+style.innerHTML = `
+    .typing-caret {
+        border-right: 2px solid #0dcaf0; /* Use primary color */
+        animation: blink-caret 0.75s step-end infinite;
+    }
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: #0dcaf0; }
+    }
+`;
+document.head.appendChild(style);
 
