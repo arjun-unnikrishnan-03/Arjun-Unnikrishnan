@@ -12,7 +12,7 @@ let isDeleting = false;
 let delay = 100;
 
 function type() {
-  if (i >= textArray.length) i = 0;
+  if (i >= textArray.length) return; // Stop after last word is shown
 
   if (!isDeleting && j <= textArray[i].length) {
     currentText = textArray[i].substring(0, j++);
@@ -25,8 +25,12 @@ function type() {
   document.querySelector(".typewriter-text").innerHTML = currentText + "|";
 
   if (j === textArray[i].length && !isDeleting) {
+    if (i === textArray.length - 1) {
+      document.querySelector(".typewriter-text").innerHTML = textArray[i]; // Show last word only, stop blinking
+      return;
+    }
     isDeleting = true;
-    delay = 1200;
+    delay = 1000;
   }
 
   if (j === 0 && isDeleting) {
@@ -37,6 +41,7 @@ function type() {
 
   setTimeout(type, delay);
 }
+
 
 window.onload = () => {
   type(); // ✅ Only one call
@@ -68,4 +73,31 @@ document.querySelectorAll('a.nav-link').forEach(link => {
       document.querySelector(this.hash).scrollIntoView({ behavior: "smooth" });
     }
   });
+});
+// Counter Animation
+function animateCounters() {
+  const counters = document.querySelectorAll(".counter");
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute("data-target");
+      const count = +counter.innerText;
+      const speed = 200; // lower = faster
+      const increment = Math.ceil(target / speed);
+
+      if (count < target) {
+        counter.innerText = count + increment;
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  });
+}
+
+window.addEventListener("scroll", () => {
+  const statsSection = document.getElementById("stats");
+  if (statsSection && statsSection.getBoundingClientRect().top < window.innerHeight - 100) {
+    animateCounters();
+  }
 });
