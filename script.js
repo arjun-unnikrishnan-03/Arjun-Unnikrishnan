@@ -124,7 +124,7 @@ function animateCounters() {
 
       if (count < target) {
         counter.innerText = count + increment;
-        setTimeout(updateCount, 10); // Adjust 30 for smoothness
+        setTimeout(updateCount, 60); // Adjust 30 for smoothness
       } else {
         counter.innerText = target; // Ensure exact final number
       }
