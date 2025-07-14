@@ -119,7 +119,9 @@ function animateCounters() {
   counters.forEach(counter => {
     const updateCount = () => {
       const target = +counter.getAttribute("data-target");
-      let count = +counter.innerText;
+      let count = 0;
+      counter.innerText = "0";
+
       const increment = Math.ceil(target / 60); // Adjust 60 for speed (higher = slower)
 
       if (count < target) {
