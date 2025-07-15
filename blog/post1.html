@@ -4,61 +4,202 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>How I Learned AI</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background-color: #fafafa;
+      color: #2c2c2c;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(90deg, #1f1c2c, #928dab);
+      padding: 64px 30px 48px 30px;
+      text-align: center;
+      animation: fade-in 1.2s;
+      box-shadow: 0 6px 28px 0 rgba(31,28,44,0.08);
+      position: relative;
+    }
+    header::after {
+      content: "";
+      display: block;
+      margin: 32px auto 0 auto;
+      width: 70px;
+      height: 5px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, #c471f5, #928dab);
+      opacity: 0.55;
+      animation: slide-in 1s;
+    }
+    header h1 {
+      color: #fff;
+      font-size: 2.7em;
+      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 12px rgba(31, 25, 44, 0.19);
+      font-family: 'Segoe UI', Georgia, serif;
+      animation: fade-up 1.4s;
+    }
+    header p {
+      color: #ececec;
+      font-size: 1.2em;
+      margin-top: 12px;
+      font-weight: 300;
+      letter-spacing: 1.5px;
+      opacity: 0.85;
+      animation: fade-up 1.6s;
+    }
+    main {
+      max-width: 820px;
+      margin: 40px auto 0 auto;
+      padding: 40px 24px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 10px 32px 0 rgba(33, 28, 68, 0.07);
+      animation: fade-in 2.1s;
+    }
+    main p, main blockquote {
+      font-size: 1.12em;
+      transition: color 0.3s;
+    }
+    main p strong {
+      color: #50307e;
+    }
+    main blockquote {
+      background-color: #f3f0fb;
+      border-left: 6px solid #928dab;
+      border-radius: 0 10px 10px 0;
+      padding: 16px 26px;
+      font-style: italic;
+      font-size: 1.15em;
+      margin: 36px 0;
+      color: #3c3a45;
+      box-shadow: 0 3px 12px 0 rgba(146,141,171,0.06);
+      animation: fade-in 2.8s;
+    }
+    a {
+      color: #3366cc;
+      text-decoration: underline;
+      font-weight: bold;
+      transition: color 0.3s, text-shadow 0.4s;
+    }
+    a:hover, a:focus {
+      color: #7b2ff2;
+      text-shadow: 0 2px 10px #c471f580;
+    }
+    main p:last-of-type {
+      margin-top: 48px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-align: right;
+    }
+    footer {
+      text-align: center;
+      padding: 28px;
+      background: #1f1c2c;
+      color: #ccc;
+      font-size: 1em;
+      box-shadow: 0 -6px 32px rgba(61,47,86,0.06);
+      letter-spacing: 1px;
+      margin-top: 48px;
+      user-select: none;
+      animation: fade-in 2.2s;
+    }
+
+    /* Animations */
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(18px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(32px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes slide-in {
+      from { transform: scaleX(0);}
+      to   { transform: scaleX(1);}
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      main {
+        padding: 28px 7vw;
+      }
+      header {
+        padding: 36px 5vw 32px 5vw;
+      }
+      header h1 {
+        font-size: 2.1em;
+      }
+    }
+    @media (max-width: 430px) {
+      main {
+        padding: 12px 2vw;
+      }
+      header {
+        padding: 20px 1vw 24px 1vw;
+      }
+      header h1 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
 </head>
-<body style="margin: 0; font-family: Georgia, serif; line-height: 1.7; background-color: #fafafa; color: #2c2c2c;">
+<body>
 
   <!-- Header -->
-  <header style="background: linear-gradient(90deg, #1f1c2c, #928dab); padding: 60px 30px; text-align: center;">
-    <h1 style="color: white; font-size: 3em; margin: 0;">How I Learned AI</h1>
-    <p style="color: #e0e0e0; font-size: 1.2em; margin-top: 10px;">My journey from zero to deploying real-world AI projects</p>
+  <header>
+    <h1>How I Learned AI</h1>
+    <p>My journey from zero to deploying real-world AI projects</p>
   </header>
 
   <!-- Story Section -->
-  <main style="max-width: 800px; margin: auto; padding: 40px 20px;">
+  <main>
     
-    <p style="font-size: 1.1em;">
+    <p>
       Just a year ago, I barely knew what AI really meant. It sounded intimidating and complicated — something only PhDs or data scientists could understand. But deep inside, I was always curious: <em>Can I build machines that think?</em>
     </p>
 
-    <p style="font-size: 1.1em;">
+    <p>
       My journey began with a simple YouTube video on machine learning. It introduced concepts like training data and predictions. That night, I installed Python and ran my first "Hello World" using Jupyter Notebook. I had no idea what NumPy or Pandas were, but I was hooked.
     </p>
 
-    <p style="font-size: 1.1em;">
+    <p>
       Over the next few weeks, I challenged myself to learn one small concept each day: cleaning datasets, building simple models using <strong>scikit-learn</strong>, and eventually diving into <strong>TensorFlow</strong>. I failed — a lot. Models didn’t converge, code threw weird errors, and my laptop would hang during training. But each failure made me stronger.
     </p>
 
-    <blockquote style="background-color: #f0f0f0; border-left: 5px solid #888; padding: 15px 20px; font-style: italic; margin: 30px 0;">
+    <blockquote>
       “The most powerful thing I learned wasn’t AI itself — it was patience.”
     </blockquote>
 
-    <p style="font-size: 1.1em;">
+    <p>
       After three months, I built an <strong>Age and Gender Detection</strong> app using OpenCV and deep learning models. It wasn’t perfect, but it worked. Seeing that project come to life made every sleepless night worth it.
     </p>
 
-    <p style="font-size: 1.1em;">
-      I documented it all here: 
-      <a href="https://github.com/yourusername/age-gender-detector" 
-         style="color: #3366cc; text-decoration: underline;">
-         GitHub – Age & Gender Detector →
+    <p>
+      I documented it all here:
+      <a href="https://github.com/yourusername/age-gender-detector" target="_blank" rel="noopener noreferrer">
+         GitHub – Age & Gender Detector &rarr;
       </a>
     </p>
 
-    <p style="font-size: 1.1em;">
+    <p>
       Today, I’m continuing to grow — learning about NLP, transformers, and deploying AI apps. This blog is a small reflection of my path, and I hope it inspires others to start theirs.
     </p>
 
-    <p style="font-size: 1.1em; margin-top: 40px; font-weight: bold;">
+    <p>
       – Arjun U
     </p>
 
   </main>
 
   <!-- Footer -->
-  <footer style="text-align: center; padding: 20px; background: #1f1c2c; color: #ccc;">
-    &copy; 2025 Arjun U. Made with code & curiosity.
+  <footer>
+    &copy; 2025 Arjun U. Made with code &amp; curiosity.
   </footer>
 
 </body>
 </html>
-

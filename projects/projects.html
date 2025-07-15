@@ -2,52 +2,177 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Project Blog</title>
+  <style>
+    /* Inline styles converted here for better organization */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #1e1e2f;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    header h1 {
+      color: white;
+      font-size: 2.75em;
+      margin: 0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    header p {
+      color: #aaa;
+      margin-top: 8px;
+      font-style: italic;
+      font-weight: 300;
+    }
+    nav {
+      background-color: #29293d;
+      text-align: center;
+      padding: 12px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 80px;
+      z-index: 998;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 22px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s ease, transform 0.3s ease;
+      letter-spacing: 1px;
+    }
+    nav a:hover {
+      color: #63a4ff;
+      transform: scale(1.1);
+    }
+    main {
+      padding: 50px 20px;
+      max-width: 960px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    section {
+      background: white;
+      padding: 32px;
+      border-radius: 14px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: default;
+    }
+    section:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.19);
+    }
+    section h2 {
+      margin-top: 0;
+      font-size: 1.9em;
+      letter-spacing: 1.8px;
+      color: #222;
+    }
+    section p {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    section a {
+      color: #007bff;
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    section a:hover {
+      color: #0056b3;
+    }
+    footer {
+      background-color: #1e1e2f;
+      color: #aaa;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.9em;
+      letter-spacing: 1px;
+      margin-top: 60px;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 650px) {
+      nav a {
+        margin: 0 12px;
+        font-size: 1em;
+      }
+      header h1 {
+        font-size: 2em;
+      }
+      main {
+        padding: 30px 15px;
+        gap: 36px;
+      }
+      section {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
-<body style="margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f4f4f4; color: #333;">
+<body>
 
   <!-- Header -->
-  <header style="background-color: #1e1e2f; padding: 20px 40px; text-align: center;">
-    <h1 style="color: white; font-size: 2.5em; margin: 0;">My Personal Blog</h1>
-    <p style="color: #aaa; margin-top: 8px;">Explaining my technical projects and journeys</p>
+  <header>
+    <h1>My Personal Blog</h1>
+    <p>Explaining my technical projects and journeys</p>
   </header>
 
   <!-- Navigation -->
-  <nav style="background-color: #29293d; text-align: center; padding: 10px 0;">
-    <a href="#project1" style="color: #fff; margin: 0 15px; text-decoration: none;">Project 1</a>
-    <a href="#project2" style="color: #fff; margin: 0 15px; text-decoration: none;">Project 2</a>
-    <a href="#project3" style="color: #fff; margin: 0 15px; text-decoration: none;">Project 3</a>
+  <nav>
+    <a href="#project1" aria-label="Navigate to Project 1">Project 1</a>
+    <a href="#project2" aria-label="Navigate to Project 2">Project 2</a>
+    <a href="#project3" aria-label="Navigate to Project 3">Project 3</a>
   </nav>
 
   <!-- Main Content -->
-  <main style="padding: 40px; max-width: 900px; margin: auto;">
+  <main>
 
     <!-- Project 1 -->
-    <section id="project1" style="background: white; margin-bottom: 40px; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      <h2 style="margin-top: 0;">Project 1: Age & Gender Detection</h2>
+    <section id="project1" tabindex="0" aria-labelledby="proj1-title">
+      <h2 id="proj1-title">Project 1: Age &amp; Gender Detection</h2>
       <p>I created an AI model that detects age and gender from photos using Python, OpenCV, and pre-trained deep learning models.</p>
-      <a href="https://github.com/yourusername/age-gender-detector" style="color: #0056b3; text-decoration: underline;">View on GitHub</a>
+      <a href="https://github.com/yourusername/age-gender-detector" target="_blank" rel="noopener noreferrer" aria-label="View Project 1 on GitHub">View on GitHub</a>
     </section>
 
     <!-- Project 2 -->
-    <section id="project2" style="background: white; margin-bottom: 40px; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      <h2 style="margin-top: 0;">Project 2: Portfolio Website</h2>
+    <section id="project2" tabindex="0" aria-labelledby="proj2-title">
+      <h2 id="proj2-title">Project 2: Portfolio Website</h2>
       <p>This project is my personal portfolio site where I showcase my skills, resume, and project work. Built using HTML, CSS, JavaScript, and animations.</p>
-      <a href="https://yourdomain.com" style="color: #0056b3; text-decoration: underline;">Visit Portfolio</a>
+      <a href="https://yourdomain.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Portfolio Website">Visit Portfolio</a>
     </section>
 
     <!-- Project 3 -->
-    <section id="project3" style="background: white; margin-bottom: 40px; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      <h2 style="margin-top: 0;">Project 3: Astrology Chatbot</h2>
+    <section id="project3" tabindex="0" aria-labelledby="proj3-title">
+      <h2 id="proj3-title">Project 3: Astrology Chatbot</h2>
       <p>A smart chatbot trained on astrology data using an LLM, designed to answer user queries like marriage timing, compatibility, etc.</p>
-      <a href="https://yourdemo.com/astro-chatbot" style="color: #0056b3; text-decoration: underline;">Try the Bot</a>
+      <a href="https://yourdemo.com/astro-chatbot" target="_blank" rel="noopener noreferrer" aria-label="Try the Astrology Chatbot">Try the Bot</a>
     </section>
 
   </main>
 
   <!-- Footer -->
-  <footer style="background-color: #1e1e2f; color: #aaa; text-align: center; padding: 20px;">
+  <footer>
     &copy; 2025 Arjun U. All rights reserved.
   </footer>
 
