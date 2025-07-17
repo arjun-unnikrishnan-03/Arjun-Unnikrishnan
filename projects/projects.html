@@ -168,6 +168,33 @@
       <p>A smart chatbot trained on astrology data using an LLM, designed to answer user queries like marriage timing, compatibility, etc.</p>
       <a href="https://yourdemo.com/astro-chatbot" target="_blank" rel="noopener noreferrer" aria-label="Try the Astrology Chatbot">Try the Bot</a>
     </section>
+    <!-- project 4 -->>
+     <section id="project3" tabindex="0" aria-labelledby="proj3-title">
+      <h2 id="proj3-title">Celebrity Info AI Chatbot</h2>
+      <p>A Streamlit-based conversational AI app that uses OpenAI's GPT models via LangChain to generate dynamic, context-aware responses about celebrities.
+
+Features
+LangChain Integration: Uses LLMChain, PromptTemplate, and ConversationBufferMemory for structured interactions.
+OpenAI GPT Models: Generates intelligent responses using OpenAI’s language models.
+Streamlit UI: Clean, interactive web interface for user input and real-time output.
+Modular Design: Easily extendable with tools like Pinecone (vector DB), SerpAPI, or LangGraph.
+How It Works
+User inputs a celebrity name.
+The prompt template injects the input: "Tell me about celebrity {name}".
+LangChain sends the prompt to OpenAI GPT, retrieves a response.
+The chatbot displays the response via Streamlit.
+Tech Stack
+LangChain
+OpenAI API
+Streamlit
+Python 3.9+
+Example Prompt
+PromptTemplate(
+    input_variables=["name"],
+    template="Tell me about celebrity {name}"
+).</p>
+      <a href="https://github.com/arjun-unnikrishnan-03/Celebrity-Info-Chatbot-/" target="_blank" rel="noopener noreferrer" aria-label="Try the Astrology Chatbot">Try the Bot</a>
+    </section>
 
   </main>
 
