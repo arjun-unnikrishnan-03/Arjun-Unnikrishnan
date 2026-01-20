@@ -10,39 +10,40 @@ function copyEmail(event) {
     });
 }
 
-// 🖋️ Typewriter Effect (Improved Loop)
-const textArray = ["AI Enthusiast", "Software Developer", "Creative Thinker"]; // Changed one for variety
-let textIndex = 0; // Current text in textArray
-let charIndex = 0; // Current character being typed
+// 🖋️ Typewriter Effect
+const textArray = ["AI Enthusiast", "Software Developer", "Creative Thinker", "Problem Solver"];
+let textIndex = 0;
+let charIndex = 0;
 let isDeleting = false;
 const typewriterElement = document.querySelector(".typewriter-text");
-const typingSpeed = 100; // ms per character
-const deletingSpeed = 60; // ms per character
-const delayBeforeDelete = 1500; // ms to wait after typing
-const delayBeforeType = 500; // ms to wait before typing next
+
+// Config
+const typingSpeed = 100;
+const deletingSpeed = 60;
+const delayBeforeDelete = 1500;
+const delayBeforeType = 500;
 
 function typeWriterEffect() {
+    // Safety check if element exists
+    if (!typewriterElement) return;
+
     const currentWord = textArray[textIndex];
 
     if (isDeleting) {
-        // Delete characters
         typewriterElement.textContent = currentWord.substring(0, charIndex--);
     } else {
-        // Type characters
         typewriterElement.textContent = currentWord.substring(0, charIndex++);
     }
 
-    // Add/remove blinking caret
-    typewriterElement.classList.toggle('typing-caret', !isDeleting || charIndex > 0);
+    // Caret styling via JS toggle or CSS class
+    typewriterElement.classList.toggle('typing', !isDeleting);
 
     let speed = isDeleting ? deletingSpeed : typingSpeed;
 
     if (!isDeleting && charIndex === currentWord.length + 1) {
-        // Typed current word fully, now wait and start deleting
         speed = delayBeforeDelete;
         isDeleting = true;
     } else if (isDeleting && charIndex === -1) {
-        // Deleted current word fully, move to next word
         isDeleting = false;
         textIndex = (textIndex + 1) % textArray.length;
         speed = delayBeforeType;
@@ -52,129 +53,125 @@ function typeWriterEffect() {
 }
 
 
-// 🌑 Preloader
-window.onload = () => {
-    typeWriterEffect(); // Start typewriter effect
+// 🌑 Preloader & Initialization
+window.addEventListener("load", () => {
+    // Start Typewriter
+    typeWriterEffect();
+
+    // Hide Preloader
     const preloader = document.getElementById("preloader");
     if (preloader) {
-        preloader.style.display = "none";
+        preloader.style.opacity = '0';
+        preloader.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => {
+            preloader.style.display = "none";
+        }, 500);
     }
-};
+});
 
-// 🔄 Scroll Reveal + Progress Bar
+
+// 🔄 Scroll Reveal, Navbar Effect & Progress Bar
 function handleScroll() {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollTop = window.scrollY;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    
+    // 1. Progress Bar
     const scrolled = (scrollTop / scrollHeight) * 100;
     const progressBar = document.getElementById("progressBar");
     if (progressBar) {
         progressBar.style.width = scrolled + "%";
     }
 
+    // 2. Navbar Blurred Effect
+    const navbar = document.getElementById("mainNav");
+    if (navbar) {
+        if (scrollTop > 50) {
+            navbar.classList.add("navbar-scrolled");
+        } else {
+            navbar.classList.remove("navbar-scrolled");
+        }
+    }
+
+    // 3. Reveal Elements
     document.querySelectorAll(".reveal").forEach((el) => {
         const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight - 150) { // Adjusted offset for reveal
+        if (top < window.innerHeight - 100) {
             el.classList.add("active");
         }
     });
 
-    // Trigger counters on scroll
-    const statsSection = document.getElementById("stats");
-    if (!window.countersStarted && statsSection && statsSection.getBoundingClientRect().top < window.innerHeight - 100) {
-        animateCounters();
-        window.countersStarted = true; // Ensure it runs only once
-    }
+    // 4. Trigger Counters
+    handleCounterTrigger();
 }
 
-// Add scroll event listener
-window.addEventListener("scroll", handleScroll);
-// Run handleScroll once on load to reveal elements already in view
-document.addEventListener("DOMContentLoaded", handleScroll);
-
-
-// 🔗 Smooth Scroll for Nav Links
-document.querySelectorAll('a.nav-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-        if (this.hash !== "") {
-            e.preventDefault();
-            const targetElement = document.querySelector(this.hash);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: "smooth" });
-                // Collapse navbar on mobile after clicking a link
-                const navbarToggler = document.querySelector('.navbar-toggler');
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarToggler && navbarCollapse.classList.contains('show')) {
-                    navbarToggler.click(); // Simulate click to close
-                }
-            }
-        }
-    });
+// Throttled Scroll Listener
+let isScrolling = false;
+window.addEventListener("scroll", () => {
+    if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+            handleScroll();
+            isScrolling = false;
+        });
+        isScrolling = true;
+    }
 });
 
+
 // 🔢 Animated Counters
-// Function moved outside and now part of window scope or module if needed.
-// It's called by handleScroll when stats section comes into view.
+let countersActivated = false;
+
 function animateCounters() {
   const counters = document.querySelectorAll(".counter");
   counters.forEach(counter => {
     const target = +counter.getAttribute("data-target");
+    const duration = 2000; // ms
+    const increment = target / (duration / 16); // 60fps approx
+    
     let count = 0;
-    const increment = target / 100;
-    counter.innerText = "0";
-
     const updateCount = () => {
       if (count < target) {
         count += increment;
         counter.innerText = Math.ceil(count);
-        setTimeout(updateCount, 15);
+        requestAnimationFrame(updateCount);
       } else {
         counter.innerText = target;
       }
     };
-
     updateCount();
   });
 }
 
-
-
-// 🎯 Trigger counter animation on mouse hover
-// ✅ Trigger counter animation when .stats-section scrolls into view
-let countersAnimated = false;
-
 function handleCounterTrigger() {
   const statsSection = document.querySelector(".stats-section");
-  if (!countersAnimated && statsSection) {
-    const sectionTop = statsSection.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (sectionTop < windowHeight - 100) {
+  if (!countersActivated && statsSection) {
+    const top = statsSection.getBoundingClientRect().top;
+    if (top < window.innerHeight - 150) {
       animateCounters();
-      countersAnimated = true;
+      countersActivated = true;
     }
   }
 }
 
-// ✅ Works on both mobile + desktop
-window.addEventListener("scroll", handleCounterTrigger);
-window.addEventListener("load", handleCounterTrigger);
+// 🔗 Smooth Scroll for Nav Links (Bootstrap offset fix)
+document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
 
+        if (targetElement) {
+            // Close mobile menu if open
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarToggler && navbarCollapse.classList.contains('show')) {
+                navbarToggler.click();
+            }
 
-
-
-
-// Typing caret animation for typewriter text
-// This CSS is added directly in JavaScript to ensure it's loaded after element is available
-const style = document.createElement('style');
-style.innerHTML = `
-    .typing-caret {
-        border-right: 2px solid #0dcaf0; /* Use primary color */
-        animation: blink-caret 0.75s step-end infinite;
-    }
-    @keyframes blink-caret {
-        from, to { border-color: transparent }
-        50% { border-color: #0dcaf0; }
-    }
-`;
-document.head.appendChild(style);
-
+            // Smooth scroll
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});

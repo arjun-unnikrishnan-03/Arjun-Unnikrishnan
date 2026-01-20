@@ -1,537 +1,423 @@
-/* ---------------- General Layout ---------------- */
+/* 
+  --------------------------------------------------
+  1. ROOT VARIABLES & THEME
+  --------------------------------------------------
+*/
 :root {
-    --background: #f8f9fa;
-    --primary: #1a237e;
-    --secondary: #3949ab;
-    --accent: #ffb300;
-    --text: #ffffff;
-    --muted: #6c757d;
-    --card-bg: #fff;
-    --card-shadow: 0 2px 16px rgba(26,35,126,0.06);
+  /* Colors */
+  --bg-dark: #0f172a;           /* Deep blue-gray */
+  --bg-darker: #020617;         /* Nearly black */
+  --primary: #3b82f6;           /* Bright Blue */
+  --primary-glow: rgba(59, 130, 246, 0.5);
+  --secondary: #8b5cf6;         /* Violet */
+  --secondary-glow: rgba(139, 92, 246, 0.5);
+  --accent: #06b6d4;            /* Cyan */
+  --text-main: #f8fafc;         /* White-ish */
+  --text-muted: #94a3b8;        /* Gray */
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.05); /* Very subtle white */
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 15px;
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* Fonts */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
-
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    scroll-behavior: smooth;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    background-color: var(--dark-bg); /* Fallback for no video */
-    color: var(--light-text); /* Default text color */
+/* 
+  --------------------------------------------------
+  2. RESET & BASE STYLES
+  --------------------------------------------------
+*/
+html {
+  scroll-behavior: smooth;
 }
 
-/* ---------------- Background Video ---------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-dark); /* Fallback */
+  color: var(--text-main);
+  overflow-x: hidden;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark); 
+}
+::-webkit-scrollbar-thumb {
+  background: #334155; 
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary); 
+}
+
+/* 
+  --------------------------------------------------
+  3. BACKGROUND VIDEO & OVERLAY
+  --------------------------------------------------
+*/
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
 #bgVideo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -2; /* Below overlay */
-}
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
-    z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
-/* ---------------- Navigation Bar ---------------- */
-.navbar {
-    background-color: rgba(0, 0, 0, 0.8) !important; /* Slightly transparent dark navbar */
-    backdrop-filter: blur(10px); /* Frosted effect */
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    z-index: 1000; /* Ensure navbar is above other content */
+.video-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg, 
+    rgba(15, 23, 42, 0.85) 0%, 
+    rgba(2, 6, 23, 0.95) 100%
+  );
+  z-index: 1;
 }
+
+/* 
+  --------------------------------------------------
+  4. UTILITIES & COMPONENTS
+  --------------------------------------------------
+*/
+.section-padding {
+  padding: 100px 0;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Buttons */
+.btn-primary-custom {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+  color: white;
+}
+
+.btn-outline-light-custom {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.btn-outline-light-custom:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline-info-custom {
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 50px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+}
+
+.btn-outline-info-custom:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Badge */
+.badge-custom {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 50px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.badge-custom:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* 
+  --------------------------------------------------
+  5. NAVIGATION
+  --------------------------------------------------
+*/
+#mainNav {
+  transition: all 0.4s ease;
+  padding: 20px 0;
+}
+
+#mainNav.navbar-scrolled {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  padding: 15px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
 .navbar-brand {
-    color: #fff !important;
+    font-family: var(--font-heading);
     font-size: 1.5rem;
+    font-weight: 800;
+    color: white !important;
 }
+
 .nav-link {
-    color: #fff !important;
     font-weight: 500;
-    transition: color 0.3s ease;
-}
-.nav-link:hover {
-    color: var(--primary-color) !important;
-}
-
-/* ---------------- Hero Section ---------------- */
-.hero-section {
-    padding: 150px 20px 80px; /* More top padding for fixed nav */
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    margin-left: 15px;
     position: relative;
-    z-index: 1; /* Above video/overlay */
-}
-.profile-hero-img {
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
-    transition: transform 0.3s ease-in-out;
-}
-.profile-hero-img:hover {
-    transform: scale(1.05);
-}
-.typewriter-text {
-    font-weight: bold;
-    border-right: 2px solid var(--primary-color);
-    white-space: nowrap;
-    font-size: 1.5rem;
-    display: inline-block; /* Ensure caret stays on one line */
-    min-height: 1.5rem; /* Prevent layout shift */
-}
-.hero-section .btn {
-    border-width: 2px;
-    font-weight: 600;
-    padding: 10px 25px;
-    transition: all 0.3s ease;
-}
-.hero-section .btn-outline-light:hover {
-    background-color: var(--primary-color);
-    color: var(--dark-text) !important;
-    border-color: var(--primary-color);
+    color: rgba(255,255,255,0.7) !important;
 }
 
-/* ---------------- Progress Bar ---------------- */
-#progressBar {
-    position: fixed;
-    top: 56px; /* Below fixed navbar */
+.nav-link:hover, .nav-link.active {
+    color: white !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
     left: 0;
-    width: 0%;
-    height: 5px;
-    background: var(--primary-color);
-    z-index: 999;
-    transition: width 0.25s ease-out;
-}
-@media (max-width: 991.98px) {
-    #progressBar {
-        top: 0; /* Adjust for smaller screens where navbar might collapse */
-    }
+    background: var(--primary);
+    transition: width 0.3s;
 }
 
-/* ---------------- Reveal on Scroll ---------------- */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smoother animation */
+.nav-link:hover::after {
+    width: 100%;
 }
-.reveal.active {
+
+/* 
+  --------------------------------------------------
+  6. HERO SECTION
+  --------------------------------------------------
+*/
+.hero-section {
+  height: 100vh;
+  position: relative;
+  /* Ensure it sits above the video overlay but below navbar if needed */
+}
+
+.hero-content {
+  z-index: 2;
+  animation: fadeInDown 1.5s ease;
+}
+
+.profile-hero-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 30px rgba(59,130,246,0.3);
+    object-fit: cover;
+    animation: pulseGlow 3s infinite;
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.typewriter-text {
+    border-right: 2px solid var(--primary);
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+/* 
+  --------------------------------------------------
+  7. SECTIONS (About, Stats, Projects, Blog, Contact)
+  --------------------------------------------------
+*/
+.about-img-wrapper img {
+    border: 5px solid rgba(255,255,255,0.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: transform 0.5s;
+}
+
+.about-img-wrapper:hover img {
+    transform: scale(1.02) rotate(2deg);
+}
+
+.project-card .card-body {
+    background: transparent;
+}
+
+.blog-post-card h5 a:hover {
+    color: var(--primary) !important;
+}
+
+/* Contact Form Input Overrides */
+.form-control-custom {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.form-control-custom:focus {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+    border-color: var(--primary);
+    color: white;
+}
+
+.form-control-custom::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* 
+  --------------------------------------------------
+  8. ANIMATIONS & PRELOADER
+  --------------------------------------------------
+*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #020617;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
     opacity: 1;
     transform: translateY(0);
+  }
 }
 
-/* ---------------- Preloader ---------------- */
-#preloader {
-    background: var(--dark-bg);
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.spinner {
-    border: 4px solid rgba(255, 255, 255, 0.2);
-    border-top: 4px solid var(--primary-color);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 0.8s linear infinite;
-}
-@keyframes spin {
-    to { transform: rotate(360deg); }
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+  70% { box-shadow: 0 0 0 20px rgba(59, 130, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
 }
 
-/* ---------------- Floating Contact Button ---------------- */
-#contactBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--primary-color);
-    color: var(--dark-text);
-    padding: 12px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.3);
-    z-index: 998; /* Below preloader/navbar, above content */
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-#contactBtn:hover {
-    background: #0bbdd1;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(251, 249, 249, 0.4);
+/* Reveal on Scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
 }
 
-/* ---------------- Glass Card Style (Reusable) ---------------- */
-.glass-card {
-    background: var(--glass-bg-dark);
-    border: 1px solid var(--glass-border-dark);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 20px;
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.05);
-    color: var(--light-text);
-    padding: 40px;
-    margin: 20px auto; /* Centering and spacing */
-    max-width: 100%; /* Ensure it fits container */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ---------------- Section General Styles ---------------- */
-section {
-    padding: 80px 0; /* Consistent padding for all sections */
-    position: relative;
-    z-index: 1; /* Ensure sections appear above video/overlay */
-}
-section h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: var(--primary-color); /* Highlight section titles */
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-section p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.85);
-}
-
-/* ---------------- About Section (Specific) ---------------- */
-.about-section {
-    padding: 80px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.about-container { /* This specific one uses glass-card */
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1100px; /* Wider for about section */
-}
-.about-left {
-    flex: 1 1 280px; /* Allow image to take more space */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.profile-img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 6px solid var(--primary-color);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
-    transition: transform 0.4s ease-in-out;
-}
-.profile-img:hover {
-    transform: scale(1.03) rotate(2deg);
-}
-.about-right {
-    flex: 2 1 600px;
-    padding-left: 40px; /* More padding */
-}
-.about-right h2 {
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .hero-title {
     font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-.about-right .highlight {
-    color: #00ffe7; /* Brighter highlight */
-}
-.about-points {
-    margin-top: 20px;
-    padding-left: 25px;
-    list-style: none; /* Remove default bullet */
-}
-.about-points li {
-    margin-bottom: 12px;
-    font-size: 1rem;
-    position: relative;
-    padding-left: 25px; /* Space for custom bullet */
-    color: rgba(255, 255, 255, 0.9);
-}
-.about-points li::before {
-    content: '▪'; /* Custom bullet point */
-    color: var(--primary-color);
-    font-size: 1.2em;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.skill-badges {
-    margin-top: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px; /* Space between badges */
-}
-.skill-badges .badge {
-    background: var(--primary-color);
-    color: var(--dark-text);
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 8px 16px;
-    border-radius: 25px;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-.skill-badges .badge:hover {
-    background: #00e0ff;
-    transform: translateY(-2px);
-}
-.tagline {
-    margin-top: 30px;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.7);
-    border-left: 4px solid var(--primary-color);
-    padding-left: 15px;
-}
-
-/* ---------------- Stats Section ---------------- */
-.stats-section {
-    background: rgba(255, 251, 251, 0.4); /* Darker background for distinction */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 60px 0;
-}
-.stats-section h3 {
-    color: var(--primary-color);
-    font-size: 3.5rem; /* Larger numbers */
-    margin-bottom: 10px;
-}
-.stats-section p {
-    color: var(--light-text);
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-
-/* ---------------- Project Cards ---------------- */
-/* Make all card backgrounds more opaque and lighter */
-.project-card, .glass-card, .blog-post-card {
-    background: rgba(30, 30, 30, 0.88); /* dark but more readable */
-    color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 2px 16px rgba(26,35,126,0.06);
-    padding: 30px;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-}
-
-/* Headings and main sentences pure white */
-.project-card .card-title,
-.project-card .card-text,
-.blog-post-card .fw-bold a,
-.blog-post-card p,
-h2, h3, h4, h5, h6 {
-    color: #fff !important;
-}
-
-/* Make body text (card-text) white */
-.project-card .card-text,
-.blog-post-card p {
-    color: #fff !important;
-}
-
-/* Meta info (like published date) in whitish grey */
-.blog-post-card small,
-.project-card .meta,
-.text-muted,
-.text-secondary {
-    color: #e0e0e0 !important;
-    font-size: 0.95em;
-    opacity: 0.85;
-}
-
-/* Buttons: make sure they're visible */
-.project-card .btn-info,
-.project-card .btn-primary,
-.blog-post-card .btn-info,
-.blog-post-card .btn-primary {
-    background: #1a237e;
-    color: #fff;
-    border: none;
-}
-.project-card .btn-info:hover,
-.project-card .btn-primary:hover,
-.blog-post-card .btn-info:hover,
-.blog-post-card .btn-primary:hover {
-    background: #3949ab;
-    color: #fff;
-}
-
-/* For secondary/outline buttons */
-.project-card .btn-outline-secondary,
-.blog-post-card .btn-outline-secondary {
-    color: #fff;
-    border-color: #fff;
-}
-.project-card .btn-outline-secondary:hover,
-.blog-post-card .btn-outline-secondary:hover {
-    background: #fff;
-    color: #1a237e;
-}
-
-
-/* ---------------- Blog Section ---------------- */
-.blog-post-card .fw-bold a {
-    color: var(--primary-color) !important;
-}
-.blog-post-card .fw-bold a:hover {
-    text-decoration: underline !important;
-}
-.blog-post-card p {
-    color: rgba(255, 255, 255, 0.7);
-}
-.blog-post-card small {
-    color: rgba(255, 255, 255, 0.5) !important;
-}
-
-/* ---------------- Contact Form ---------------- */
-#contact .form-control {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--light-text);
-    padding: 12px 15px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-#contact .form-control:focus {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.25rem rgba(0, 220, 255, 0.25);
-    color: var(--light-text);
-}
-#contact .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-}
-#contact .form-label {
-    font-weight: 600;
-    color: var(--light-text);
-    margin-bottom: 8px;
-}
-#contact .btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
-    font-weight: 600;
-    padding: 12px 30px;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
-#contact .btn-success:hover {
-    background-color: #218838;
-    border-color: #1e7e34;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.4);
-}
-
-/* ---------------- Footer ---------------- */
-footer {
-    background-color: rgba(0, 0, 0, 0.8) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    color: rgba(255, 255, 255, 0.7);
-    padding: 25px 0;
-    position: relative;
-    z-index: 1; /* Above video/overlay */
-}
-footer .social-links a {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-footer .social-links a:hover {
-    color: var(--primary-color);
-}
-
-/* ---------------- Responsive Adjustments ---------------- */
-@media (max-width: 991.98px) {
-    .hero-section {
-        padding-top: 120px;
-    }
-    .typewriter-text {
-        font-size: 1.3rem;
-    }
-    .about-container {
-        flex-direction: column;
-        padding: 30px;
-    }
-    .about-left {
-        margin-bottom: 30px;
-    }
-    .about-right {
-        padding-left: 0;
-        text-align: center;
-    }
-    .about-points {
-        text-align: left; /* Keep list left-aligned */
-        padding-left: 40px;
-    }
-    .skill-badges {
-        justify-content: center; /* Center badges on small screens */
-    }
-    section h2 {
-        font-size: 2.2rem;
-    }
-    .stats-section h3 {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .hero-section {
-        padding-top: 100px;
-        padding-bottom: 50px;
-    }
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-    .typewriter-text {
-        font-size: 1.1rem;
-    }
-    .hero-section .btn {
-        padding: 8px 20px;
-        font-size: 0.9rem;
-    }
-    .about-container {
-        padding: 20px;
-        border-radius: 15px;
-    }
-    .profile-img {
-        width: 200px;
-        height: 200px;
-    }
-    .about-right h2 {
-        font-size: 2rem;
-    }
-    .about-right p, .about-points li, .tagline {
-        font-size: 0.95rem;
-    }
-    .stats-section h3 {
-        font-size: 2.8rem;
-    }
-    .stats-section p {
-        font-size: 1.1rem;
-    }
-    .project-card, .blog-post-card {
-        padding: 20px;
-    }
-    .project-card .card-title {
-        font-size: 1.3rem;
-    }
-    #contact .glass-card {
-        padding: 30px;
-    }
-    #contactBtn {
-        bottom: 20px;
-        right: 20px;
-        padding: 10px 18px;
-        font-size: 0.9rem;
-    }
+  }
+  
+  .glass-card {
+    padding: 20px;
+  }
 }
