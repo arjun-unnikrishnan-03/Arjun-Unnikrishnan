@@ -1,42 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project Update - Staytune</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Details | Arjun Unnikrishnan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* Page specific styles */
+    .case-study-hero {
+      background: var(--text-primary);
+      color: white;
+      padding: 6rem 0;
+      text-align: center;
+    }
+
+    .tech-tag {
+      border: 1px solid white;
+      padding: 5px 15px;
+      margin: 0 5px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      display: inline-block;
+    }
+  </style>
 </head>
-<body style="
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
-  text-align: center;
-">
-  <div style="
-    max-width: 600px;
-    padding: 40px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  ">
-    <h1 style="
-      font-size: 3rem;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-    ">We Will Update About The Project Soon</h1>
-    <p style="
-      font-size: 1.25rem;
-      letter-spacing: 1px;
-      margin-bottom: 0;
-      font-style: italic;
-    ">Staytune</p>
-  </div>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="../index.html">ARJUN.U</a>
+      <div class="ms-auto">
+        <a class="nav-link" href="projects.html">BACK TO ARCHIVE</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="case-study-hero">
+    <div class="container">
+      <p class="mono-text text-white-50 mb-3">FEATURED PROJECT</p>
+      <h1 class="display-2 mb-4" style="font-family: var(--font-serif);">GroceEazy Organic</h1>
+      <div class="mb-5">
+        <span class="tech-tag">React 19</span>
+        <span class="tech-tag">Redux Toolkit</span>
+        <span class="tech-tag">AWS</span>
+        <span class="tech-tag">Docker</span>
+      </div>
+      <img src="../assets/project_groceeazy.png" alt="Hero"
+        style="width: 200px; border-radius: 50%; border: 2px solid white; margin: 0 auto; filter: invert(1);">
+    </div>
+  </header>
+
+  <section class="section-feature">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="mb-4">THE <span class="hollow-text">CHALLENGE</span></h2>
+      <p class="lead mb-5">
+        Designing a scalable MERN stack application that handles complex inventory management while establishing a brand
+        identity for organic products.
+      </p>
+
+      <h3 class="mb-3">KEY FEATURES</h3>
+      <ul class="list-group list-group-flush border-top border-bottom border-dark mb-5">
+        <li class="list-group-item bg-transparent py-3 mono-text">01. Layered Backend Architecture
+          (Controller-Service-Repository)</li>
+        <li class="list-group-item bg-transparent py-3 mono-text">02. Secure JWT Auth with Argon2 Hashing</li>
+        <li class="list-group-item bg-transparent py-3 mono-text">03. Role-Based Access Control (RBAC)</li>
+      </ul>
+
+      <h2 class="mb-4">THE <span class="hollow-text">RESULT</span></h2>
+      <p>
+        A high-performance e-commerce platform deployed on AWS using Docker containers. The application features a
+        persistent Redux store for seamless user sessions and a refined UI inspired by modern minimalism.
+      </p>
+
+      <div class="mt-5 text-center">
+        <a href="https://github.com/arjun-unnikrishnan-03" class="btn-chani">VIEW SOURCE CODE</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p class="small text-muted mono-text">© 2026 ARJUN UNNIKRISHNAN</p>
+    </div>
+  </footer>
+
 </body>
+
 </html>

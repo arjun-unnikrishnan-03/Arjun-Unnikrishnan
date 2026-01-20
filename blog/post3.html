@@ -1,165 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Top Full Stack Development Tools for 2025</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FullStack Basics | Arjun Unnikrishnan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #232526, #1c1c2c);
-      color: #e0e0e0;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
-      min-height: 100vh;
+    .article-content {
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-primary);
     }
-    .container {
-      background: rgba(36, 39, 54, 0.95);
-      max-width: 780px;
-      border-radius: 16px;
-      padding: 40px 48px;
-      box-shadow: 0 12px 34px rgba(0, 114, 255, 0.45);
-      overflow-wrap: break-word;
-    }
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 12px;
-      color: #4584ff;
+
+    .article-header {
+      border-bottom: var(--border-black);
+      padding: 4rem 0;
       text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 0 0 8px #3e6ff7aa;
-    }
-    p.subtitle {
-      text-align: center;
-      font-style: italic;
-      margin-top: 0;
-      margin-bottom: 36px;
-      font-weight: 400;
-      color: #aab8ffcc;
-    }
-    h2 {
-      font-size: 1.7rem;
-      margin-top: 36px;
-      color: #84aaff;
-      border-bottom: 2px solid #2f4ed8;
-      padding-bottom: 6px;
-    }
-    ul.tools-list {
-      list-style: none;
-      padding: 0;
-      margin: 20px 0 0 0;
-    }
-    ul.tools-list > li {
-      background: #28304e;
-      margin: 16px 0;
-      padding: 20px 24px;
-      border-radius: 10px;
-      box-shadow: inset 0 0 10px #1f245c80;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-    }
-    ul.tools-list > li:hover {
-      transform: translateY(-6px);
-      box-shadow:
-        inset 0 0 20px #1f245cff,
-        0 10px 30px rgba(33, 85, 220, 0.75);
-      color: #a5c4ff;
-      z-index: 2;
-    }
-    ul.tools-list strong {
-      color: #c4d2ff;
-      font-weight: 700;
-    }
-    ul.tools-list a {
-      color: #719cff;
-      text-decoration: underline;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    ul.tools-list a:hover,
-    ul.tools-list a:focus {
-      color: #a9c3ff;
-      text-decoration: none;
-    }
-    footer {
-      margin-top: 48px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #7086ccaa;
-      user-select: none;
-    }
-    @media (max-width: 720px) {
-      .container {
-        padding: 28px 20px;
-      }
-      h1 {
-        font-size: 2.1rem;
-      }
-      h2 {
-        font-size: 1.4rem;
-      }
     }
   </style>
 </head>
+
 <body>
-  <article class="container" role="main" aria-labelledby="page-title">
-    <h1 id="page-title">Top Full Stack Development Tools for 2025</h1>
-    <p class="subtitle">Master the stacked technologies shaping modern web apps</p>
 
-    <h2>1. Frontend Frameworks & Libraries</h2>
-    <ul class="tools-list">
-      <li>
-        <strong>React.js:</strong> Updated for 2025 with enhanced server-side rendering and performance optimization, React remains the go-to library for building interactive single-page applications.<br/>
-        <strong>Others:</strong> <a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">Vue.js</a>, <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">Next.js</a> (React-based SSR), <a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer">Svelte</a>, <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind CSS</a> for rapid, utility-first styling.
-      </li>
-    </ul>
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="../index.html">ARJUN.U</a>
+      <div class="ms-auto">
+        <a class="nav-link" href="../index.html">BACK TO HOME</a>
+      </div>
+    </div>
+  </nav>
 
-    <h2>2. Backend Tools & Runtimes</h2>
-    <ul class="tools-list">
-      <li>
-        <strong>Node.js:</strong> The runtime of choice for scalable, event-driven servers and APIs. <br/>
-        <strong>Databases:</strong> MongoDB, PostgreSQL, with GraphQL increasingly replacing REST APIs for flexible data fetching.
-      </li>
-    </ul>
+  <article>
+    <header class="article-header">
+      <div class="container">
+        <p class="mono-text mb-3">JUNE 01, 2025 • TUTORIAL</p>
+        <h1 class="display-3 mb-4" style="font-family: var(--font-serif);">FullStack 101</h1>
+        <p class="lead mono-text">From Frontend to Backend: Connecting the dots.</p>
+      </div>
+    </header>
 
-    <h2>3. Version Control & Package Management</h2>
-    <ul class="tools-list">
-      <li>
-        <strong>Git & GitHub:</strong> Essential for source control, collaboration, and CI/CD integration.<br/>
-        <strong>Package Managers:</strong> npm, Yarn, and pnpm (noted for efficiency and speed in dependency management).
-      </li>
-    </ul>
+    <div class="container py-5" style="max-width: 700px;">
+      <div class="article-content">
+        <p>Becoming a FullStack developer means understanding how the entire web works, from the pixel on the screen to
+          the database entry on the server.</p>
 
-    <h2>4. Containerization & Deployment</h2>
-    <ul class="tools-list">
-      <li>
-        <strong>Docker & Kubernetes:</strong> Standard for containerizing and orchestrating scalable applications.<br/>
-        <strong>CI/CD Tools:</strong> Jenkins, GitLab CI, Azure DevOps automate testing and deployment pipelines for faster, reliable releases.
-      </li>
-    </ul>
+        <h3 class="mt-5 mb-3" style="font-family: var(--font-serif);">1. The Frontend (Client)</h3>
+        <p>This is what the user interacts with. Today, this usually means <strong>React, Vue, or Angular</strong>. It
+          interacts with the backend via API calls (fetch or axios).</p>
 
-    <h2>5. AI-Powered Developer Tools</h2>
-    <ul class="tools-list">
-      <li>
-        <strong>GitHub Copilot X, ChatGPT:</strong> Accelerate coding with AI-assisted code generation, debugging, and testing – reshaping how developers architect and review code.
-      </li>
-    </ul>
+        <h3 class="mt-5 mb-3" style="font-family: var(--font-serif);">2. The Backend (Server)</h3>
+        <p>This is the brain. Node.js, Python, or Go. It processes logic, authenticates users, and talks to the
+          database.</p>
 
-    <h2>Keep an Eye on Emerging Trends</h2>
-    <ul class="tools-list">
-      <li>
-        <strong>Web3 & Blockchain Integration:</strong> Smart contracts with Solidity, decentralized storage (IPFS), and dApp architecture.<br/>
-        <strong>Low-Code/No-Code Hybrid Workflows:</strong> Tools like Bubble or Webflow combined with full-stack coding for rapid prototyping and enterprise customization.<br/>
-        <strong>Composable Architectures:</strong> Modular apps built from reusable components, API-first strategies, micro frontends, and headless CMS powering flexible, scalable solutions.
-      </li>
-    </ul>
+        <h3 class="mt-5 mb-3" style="font-family: var(--font-serif);">3. The Database</h3>
+        <p>The memory. NoSQL (MongoDB) for flexibility or SQL (Postgres) for structure. Understanding data modeling is
+          crucial here.</p>
 
-    <footer>
-      &copy; 2025 Arjun U. All rights reserved. Empowering developers for a smarter future.
-    </footer>
+        <div class="p-4 mt-5 bg-light mono-text border border-dark">
+          "The full stack is not about mastering everything perfectly, but understanding how everything connects."
+        </div>
+      </div>
+
+      <div class="mt-5 pt-5 border-top border-dark text-center">
+        <a href="../index.html" class="btn-chani">More Writings</a>
+      </div>
+    </div>
   </article>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p class="small text-muted mono-text">© 2026 ARJUN UNNIKRISHNAN</p>
+    </div>
+  </footer>
+
 </body>
+
 </html>
