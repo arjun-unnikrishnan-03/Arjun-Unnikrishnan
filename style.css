@@ -365,6 +365,19 @@ textarea:focus {
     border-left: 5px solid var(--text-primary);
 }
 
+/* --- SOCIAL ICONS --- */
+.social-icon {
+    font-size: 3rem;
+    color: var(--text-primary);
+    transition: transform 0.2s, color 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    text-shadow: 2px 2px 0px #ccc;
+    border-bottom: none;
+}
+
 
 /* --- FOOTER --- */
 .site-footer {
