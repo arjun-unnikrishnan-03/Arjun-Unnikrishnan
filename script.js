@@ -67,3 +67,52 @@ const statsSection = document.querySelector(".section-feature"); // The about se
 if (statsSection) {
     observer.observe(statsSection);
 }
+
+// 📈 Scroll Progress Bar
+const scrollProgress = document.querySelector(".scroll-progress");
+if (scrollProgress) {
+    const updateProgress = () => {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+        scrollProgress.style.width = progress + "%";
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    updateProgress();
+}
+
+// ✨ Scroll Reveal — fade + translate up on intersection
+const revealEls = document.querySelectorAll(".reveal");
+if (revealEls.length && "IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+    revealEls.forEach((el, i) => {
+        // Stagger siblings within the same parent
+        el.style.transitionDelay = (i % 6) * 80 + "ms";
+        revealObserver.observe(el);
+    });
+} else {
+    // Fallback: just show everything
+    revealEls.forEach(el => el.classList.add("is-visible"));
+}
+
+// 🎯 Smooth-scroll offset compensation for sticky navbar
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+        if (href === "#" || href.length < 2) return;
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        const navH = document.querySelector(".custom-navbar")?.offsetHeight || 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - navH - 8;
+        window.scrollTo({ top, behavior: "smooth" });
+    });
+});

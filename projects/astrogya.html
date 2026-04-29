@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astrogya — Vedic & Western Astrology SaaS Platform | Arjun Unnikrishnan</title>
+  <meta name="description"
+    content="Full-stack monorepo astrology SaaS platform — Next.js 16 web + Expo mobile, 60+ astrological API integrations, Razorpay payments, AI/RAG chatbot, Supabase + AWS Cognito." />
+
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css?v=3" />
+
+  <style>
+    .case-study-hero {
+      background: var(--text-primary);
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .case-study-hero .hollow-text {
+      -webkit-text-stroke-color: white;
+    }
+    .case-study-hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.05;
+      text-transform: none;
+    }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: var(--border-black);
+      border-bottom: var(--border-black);
+      background: var(--bg-white);
+    }
+    .stat-row .stat-cell {
+      padding: 1.75rem 1rem;
+      text-align: center;
+      border-right: var(--border-black);
+    }
+    .stat-row .stat-cell:last-child { border-right: none; }
+    .stat-row .stat-num {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .stat-row .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+    @media (max-width: 768px) {
+      .case-study-hero h1 { font-size: 2.2rem; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+      .stat-row .stat-cell:nth-child(2) { border-right: none; }
+      .stat-row .stat-cell:nth-child(1),
+      .stat-row .stat-cell:nth-child(2) { border-bottom: var(--border-black); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="../index.html">ARJUN.U</a>
+      <div class="ms-auto">
+        <a class="nav-link" href="projects.html">← BACK TO ARCHIVE</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="case-study-hero">
+    <div class="container">
+      <p class="mono-text text-white-50 mb-3">FEATURED CASE STUDY · 02</p>
+      <h1 class="mb-3" style="font-family: var(--font-serif);">
+        <span class="hollow-text">Astrogya</span>
+      </h1>
+      <p class="mono-text mb-4" style="opacity: 0.85; max-width: 780px; margin: 0 auto;">
+        A full-stack monorepo platform delivering personalized horoscopes, computed Vedic & Western
+        birth charts, kundali matching, paid PDF reports, and an AI chatbot powered by 60+
+        astrological computation APIs.
+      </p>
+      <div class="tech-badges">
+        <span class="tech-badge">Next.js 16</span>
+        <span class="tech-badge">React 19</span>
+        <span class="tech-badge">Expo SDK 54</span>
+        <span class="tech-badge">React Native 0.81</span>
+        <span class="tech-badge">TypeScript</span>
+        <span class="tech-badge">Supabase</span>
+        <span class="tech-badge">PostgreSQL · RLS</span>
+        <span class="tech-badge">Razorpay</span>
+        <span class="tech-badge">AWS Cognito</span>
+        <span class="tech-badge">Resend</span>
+        <span class="tech-badge">Turborepo</span>
+        <span class="tech-badge">Vercel · EAS</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="stat-row">
+    <div class="stat-cell"><div class="stat-num">60+</div><div class="stat-label">Astrology APIs</div></div>
+    <div class="stat-cell"><div class="stat-num">17</div><div class="stat-label">Postgres Tables</div></div>
+    <div class="stat-cell"><div class="stat-num">280+</div><div class="stat-label">SEO URL Sitemap</div></div>
+    <div class="stat-cell"><div class="stat-num">3-Tier</div><div class="stat-label">Cache Strategy</div></div>
+  </section>
+
+  <section class="section-feature">
+    <div class="container reveal" style="max-width: 860px;">
+      <span class="section-number">01 — Problem</span>
+      <h2 class="mb-4">THE <span class="hollow-text">PROBLEM</span></h2>
+      <p class="lead mb-5">
+        Build a <strong>cross-platform Vedic + Western astrology SaaS</strong> from scratch:
+        free + premium tiers, web + mobile clients sharing logic, paid AstrologyAPI-branded PDF reports,
+        Razorpay payments with idempotent delivery, an authenticated AI chatbot with RAG on user-purchased
+        PDFs, and zero tolerance for double-charging or missed report delivery.
+      </p>
+
+      <span class="section-number">02 — What I Built</span>
+      <h2 class="mb-4">IMPACT <span class="hollow-text">BULLETS</span></h2>
+      <ul class="impact-bullets-page">
+        <li>Architected and built a <strong>Turborepo monorepo</strong> spanning a Next.js 16 (App Router,
+          React 19) web app and an Expo/React Native (SDK 54) mobile app sharing TypeScript packages
+          for API client, Supabase auth, and design tokens — supporting both <strong>cookie-session
+          (web)</strong> and <strong>Bearer-token (mobile)</strong> request authentication.</li>
+        <li>Engineered a <strong>3-tier caching strategy</strong> (in-memory Map → Supabase Postgres →
+          AstrologyAPI) reducing third-party calls to one per zodiac sign per day; integrated
+          60+ AstrologyAPI endpoints with <code>Promise.allSettled</code> parallel orchestration,
+          AbortController timeouts, and retry-on-5xx with plan-restriction error discrimination.</li>
+        <li>Implemented a <strong>Razorpay payment pipeline</strong> with HMAC SHA-256 signature
+          verification, webhook handlers for <code>payment.captured/failed</code> and
+          <code>refund.processed/failed</code>, idempotent payment-to-report delivery using JSONB
+          metadata lookups, and an admin-triggered refund flow with audit logging, email notifications,
+          and automatic plan downgrade.</li>
+        <li>Designed a <strong>Supabase Postgres schema</strong> of 17 tables (profiles, payments, refunds,
+          pdf_reports, birth_charts, audit_log, webhook_logs, etc.) with row-level security policies,
+          GIN-indexed JSONB columns, auto-profile triggers on signup, and a custom
+          <code>increment_ai_credits</code> RPC for atomic free-tier credit gating.</li>
+        <li>Built an <strong>AI chat + RAG system</strong> integrating AWS Cognito (with AES-256-GCM
+          encrypted credential storage and mid-session token refresh + retry) and a custom RAG backend;
+          implemented background fire-and-forget PDF indexing via parallel upload + summarize,
+          persisting <code>document_id</code> for follow-up RAG queries on user-purchased reports.</li>
+        <li>Hardened the application for production with strict <strong>CSP/HSTS/X-Frame security headers</strong>,
+          role-based middleware gating (admin/super_admin/banned), Resend-driven transactional email
+          (12 templates including delivery-failure alerts), a 280+ URL programmatic sitemap, JSON-LD SEO,
+          Vitest unit suites, and Playwright e2e coverage; deployed via <strong>Vercel and EAS Build</strong>.</li>
+      </ul>
+
+      <span class="section-number">03 — Result</span>
+      <h2 class="mb-4">THE <span class="hollow-text">RESULT</span></h2>
+      <p class="mb-5">
+        A SaaS platform that survives the messy reality of payments + AI + cross-platform clients:
+        <strong>idempotent delivery so users are never double-charged or missing reports</strong>,
+        token recovery so a single Cognito blip doesn't drop a paying user's chat session, and
+        tight cost control via the 3-tier cache so I'm not bleeding money on third-party API calls.
+      </p>
+
+      <div class="text-center mt-5">
+        <a href="../index.html#projects" class="btn-chani">← Back to Projects</a>
+        <a href="../index.html#contact" class="btn-outline-chani ms-2">Discuss This Work</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p class="small text-muted mono-text">© 2026 ARJUN UNNIKRISHNAN</p>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=2"></script>
+</body>
+
+</html>

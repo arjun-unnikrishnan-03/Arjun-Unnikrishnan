@@ -4,116 +4,170 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Details | Arjun Unnikrishnan</title>
+  <title>GrocEazy — Multi-Role E-Commerce Platform | Arjun Unnikrishnan</title>
+  <meta name="description"
+    content="Production-grade grocery marketplace with role-based dashboards, real-time chat, AI recipes, and ACID-style order processing. TypeScript, MERN, Socket.IO, Redis." />
 
+  <link rel="icon" type="image/png" href="../assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style.css?v=3" />
+
   <style>
-    /* Page specific styles */
     .case-study-hero {
       background: var(--text-primary);
       color: white;
-      padding: 6rem 0;
+      padding: 5rem 0;
       text-align: center;
     }
 
-    .tech-tag {
-      border: 1px solid white;
-      padding: 5px 15px;
-      margin: 0 5px;
+    .case-study-hero .hollow-text {
+      -webkit-text-stroke-color: white;
+    }
+
+    .case-study-hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.05;
+      text-transform: none;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: var(--border-black);
+      border-bottom: var(--border-black);
+      background: var(--bg-white);
+    }
+
+    .stat-row .stat-cell {
+      padding: 1.75rem 1rem;
+      text-align: center;
+      border-right: var(--border-black);
+    }
+
+    .stat-row .stat-cell:last-child { border-right: none; }
+
+    .stat-row .stat-num {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .stat-row .stat-label {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
-      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+
+    @media (max-width: 768px) {
+      .case-study-hero h1 { font-size: 2.2rem; }
+      .stat-row { grid-template-columns: 1fr; }
+      .stat-row .stat-cell { border-right: none; border-bottom: var(--border-black); }
+      .stat-row .stat-cell:last-child { border-bottom: none; }
     }
   </style>
 </head>
 
 <body>
 
+  <div class="scroll-progress" aria-hidden="true"></div>
+
   <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container-fluid px-5">
       <a class="navbar-brand" href="../index.html">ARJUN.U</a>
       <div class="ms-auto">
-        <a class="nav-link" href="projects.html">BACK TO ARCHIVE</a>
+        <a class="nav-link" href="projects.html">← BACK TO ARCHIVE</a>
       </div>
     </div>
   </nav>
 
   <header class="case-study-hero">
     <div class="container">
-      <p class="mono-text text-white-50 mb-3">FEATURED PROJECT</p>
-      <h1 class="display-2 mb-4" style="font-family: var(--font-serif);">GroceEazy Organic</h1>
-      <div class="mb-5">
-        <span class="tech-tag">React 19</span>
-        <span class="tech-tag">TypeScript</span>
-        <span class="tech-tag">Redux Toolkit</span>
-        <span class="tech-tag">Node.js</span>
-        <span class="tech-tag">MongoDB</span>
-        <span class="tech-tag">Redis</span>
-        <span class="tech-tag">Docker</span>
+      <p class="mono-text text-white-50 mb-3">FEATURED CASE STUDY · 03</p>
+      <h1 class="mb-3" style="font-family: var(--font-serif);">GrocEazy <span class="hollow-text">Organic</span></h1>
+      <p class="mono-text mb-4" style="opacity: 0.85; max-width: 720px; margin: 0 auto;">
+        A production-grade online grocery marketplace with role-based dashboards
+        (Customer / Manager / Admin), real-time chat support, AI-driven recipe suggestions,
+        and transactional order/inventory management.
+      </p>
+      <div class="tech-badges">
+        <span class="tech-badge">React 19</span>
+        <span class="tech-badge">TypeScript</span>
+        <span class="tech-badge">Express 5</span>
+        <span class="tech-badge">MongoDB</span>
+        <span class="tech-badge">Socket.IO</span>
+        <span class="tech-badge">Redis</span>
+        <span class="tech-badge">Argon2 · JWT</span>
+        <span class="tech-badge">Gemini AI</span>
+        <span class="tech-badge">Cloudinary</span>
+        <span class="tech-badge">Docker</span>
       </div>
-      <img src="../assets/project_groceeazy.png" alt="Hero"
-        style="width: 200px; border-radius: 50%; border: 2px solid white; margin: 0 auto; filter: invert(1);">
     </div>
   </header>
 
+  <section class="stat-row">
+    <div class="stat-cell"><div class="stat-num">9</div><div class="stat-label">REST Resource Domains</div></div>
+    <div class="stat-cell"><div class="stat-num">3</div><div class="stat-label">Role Dashboards</div></div>
+    <div class="stat-cell"><div class="stat-num">100%</div><div class="stat-label">TypeScript End-to-End</div></div>
+  </section>
+
   <section class="section-feature">
-    <div class="container" style="max-width: 800px;">
+    <div class="container reveal" style="max-width: 820px;">
+      <span class="section-number">01 — Problem</span>
       <h2 class="mb-4">THE <span class="hollow-text">PROBLEM</span></h2>
       <p class="lead mb-5">
-        Most grocery platforms fail at scalability, performance, and maintainability.
-        GrocEazy was built to solve real-world challenges like high-volume product access,
-        secure authentication, admin control, and fast search — all within a clean,
-        modular architecture.
+        Most grocery platforms fail at <strong>scale, transactional integrity, and operator UX</strong>.
+        GrocEazy was built to solve real-world problems: high-volume catalog access,
+        race-free inventory decrement, secure multi-role authentication, real-time customer
+        support, and an AI-assisted shopping experience — all in a clean, modular monorepo.
       </p>
 
-      <h3 class="mb-3">KEY FEATURES</h3>
-      <ul class="list-group list-group-flush border-top border-bottom border-dark mb-5">
-        <li class="list-group-item bg-transparent py-3 mono-text">
-          01. Decoupled Client-Server Architecture (SPA + REST API)
-        </li>
-
-        <li class="list-group-item bg-transparent py-3 mono-text">
-          02. Secure Authentication with JWT, Argon2 & Google OAuth
-        </li>
-
-        <li class="list-group-item bg-transparent py-3 mono-text">
-          03. Role-Based Admin System for Product & Order Management
-        </li>
-
-        <li class="list-group-item bg-transparent py-3 mono-text">
-          04. Redis Caching Layer for High-Performance Product Retrieval
-        </li>
-
-        <li class="list-group-item bg-transparent py-3 mono-text">
-          05. Image Upload & CDN Optimization using Cloudinary
-        </li>
-
-        <li class="list-group-item bg-transparent py-3 mono-text">
-          06. AI-Powered Recipe Suggestions (AI Chef Concept)
-        </li>
-
-        <li class="list-group-item bg-transparent py-3 mono-text">
-          07. Type-Safe Validation using Zod, Joi & Express-Validator
-        </li>
+      <span class="section-number">02 — What I Built</span>
+      <h2 class="mb-4">IMPACT <span class="hollow-text">BULLETS</span></h2>
+      <ul class="impact-bullets-page">
+        <li>Architected a <strong>TypeScript monorepo</strong> (Express 5 + Mongoose 9 backend, React 19 + Vite +
+          Redux Toolkit frontend) implementing 9 RESTful resource domains under a versioned
+          <code>/api/v1</code> router with role-based route guards (customer / manager / admin).</li>
+        <li>Designed a hardened JWT auth system using <strong>Argon2-hashed passwords</strong> + composite
+          refresh tokens (sessionId:rawToken for O(1) lookup), automatic token rotation with
+          <strong>replay-detection</strong> and session revocation, OTP email verification, password reset, and
+          Google OAuth — with rate limiting on every auth endpoint and a silent-refresh Axios interceptor.</li>
+        <li>Implemented <strong>transactional order processing</strong> with MongoDB
+          <code>session.startTransaction()</code> to atomically validate stock, decrement inventory via
+          conditional <code>findOneAndUpdate({ stock: { $gte: qty } })</code>, build line items, clear cart,
+          and trigger low-stock email alerts — with symmetric stock restoration on cancellation.</li>
+        <li>Built a real-time customer support module with <strong>Socket.IO rooms</strong>, persisted ChatMessage
+          history, typing indicators, unread-count broadcasts, and a least-loaded-manager auto-assignment
+          algorithm using <code>$lookup + $size</code> aggregation.</li>
+        <li>Engineered the customer storefront with React Router 7 protected routes, redux-persist state,
+          Cloudinary uploads, faceted product search (text + price + dietary + stock filters with
+          regex-escaped multi-word matching), Leaflet delivery maps, html2canvas/jsPDF invoice download,
+          Web Speech API voice search, and a <strong>Gemini-powered AI Chef</strong>.</li>
+        <li>Hardened the platform with Helmet, CORS, Zod + Joi validation, Winston structured logging,
+          compound + text indexes for product search, soft-delete patterns, $facet pagination,
+          a <strong>multi-stage Node 22 Alpine Dockerfile</strong>, ESLint + Prettier + Husky + commitlint
+          pre-commit gates, and Vercel deployment.</li>
       </ul>
 
+      <span class="section-number">03 — Result</span>
       <h2 class="mb-4">THE <span class="hollow-text">RESULT</span></h2>
-      <p>
-        GrocEazy demonstrates my ability to design and build
-        <strong>production-ready full-stack systems</strong> —
-        focusing on scalability, security, performance optimization, and clean code structure.
-        The project includes extensive documentation, Dockerized deployment,
-        and a real-world admin-customer workflow.
+      <p class="mb-5">
+        GrocEazy demonstrates the full surface area of <strong>production-ready full-stack engineering</strong>
+        — from race-free transaction design and real-time messaging to operator UX, AI integration, and
+        DevOps. It's the project I point to when asked: <em>"have you shipped something real?"</em>
       </p>
 
-      <div class="mt-5 text-center">
-        <a href="https://github.com/arjun-unnikrishnan-03" class="btn-chani">VIEW SOURCE CODE</a>
+      <div class="text-center mt-5">
+        <a href="https://github.com/arjun-unnikrishnan-03" target="_blank" class="btn-chani">View Source on GitHub →</a>
+        <a href="../index.html#projects" class="btn-outline-chani ms-2">More Projects</a>
       </div>
     </div>
   </section>
@@ -124,6 +178,7 @@
     </div>
   </footer>
 
+  <script src="../script.js?v=2"></script>
 </body>
 
 </html>

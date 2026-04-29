@@ -4,8 +4,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arjun Unnikrishnan - Portfolio</title>
+
+  <!-- SEO -->
+  <title>Arjun Unnikrishnan — Full-Stack Engineer | MERN, TypeScript, Scalable Backend Systems</title>
+  <meta name="description"
+    content="Full-Stack Software Engineer specializing in production-grade MERN, TypeScript, scalable REST APIs, real-time systems, and AI integrations. Currently building at astrogya.com." />
+  <meta name="keywords"
+    content="Full Stack Developer, MERN Developer, Backend Engineer, TypeScript, Node.js, React, MongoDB, PostgreSQL, Redis, AWS, Docker, Scalable Systems, Software Engineer India, AI Engineer, Arjun Unnikrishnan" />
+  <meta name="author" content="Arjun Unnikrishnan" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Arjun Unnikrishnan — Full-Stack Engineer" />
+  <meta property="og:description"
+    content="Production-grade MERN & TypeScript engineer. Backend systems, real-time apps, AI integrations." />
+  <meta property="og:image" content="assets/profile_collage.png" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Arjun Unnikrishnan — Full-Stack Engineer" />
+  <meta name="twitter:description"
+    content="Production-grade MERN & TypeScript engineer. Backend systems, real-time apps, AI integrations." />
+
   <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="canonical" href="https://arjun-unnikrishnan-03.github.io/" />
 
   <!-- Fonts: Space Mono & Bodoni Moda -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,15 +38,39 @@
     rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=4" />
+
+  <!-- JSON-LD Person schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Arjun Unnikrishnan",
+    "jobTitle": "Full-Stack Software Engineer",
+    "worksFor": { "@type": "Organization", "name": "Astrogya", "url": "https://astrogya.com" },
+    "url": "https://arjun-unnikrishnan-03.github.io/",
+    "sameAs": [
+      "https://github.com/arjun-unnikrishnan-03",
+      "https://www.linkedin.com/in/arjun-u03/"
+    ],
+    "knowsAbout": [
+      "TypeScript", "Node.js", "Express", "React", "Next.js", "MongoDB",
+      "PostgreSQL", "Redis", "Docker", "AWS", "REST API", "JWT", "Scalable Systems"
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
   <!-- Marquee Top Bar -->
   <div class="marquee-container">
     <div class="marquee-content">
-      *** OPEN FOR NEW OPPORTUNITIES *** FULL STACK DEVELOPER (MERN) *** PYTHON & AI ENTHUSIAST *** DOWNLOAD RESUME ***
+      *** OPEN FOR FULL-TIME ROLES *** FULL-STACK ENGINEER · TYPESCRIPT · MERN *** CURRENTLY @ ASTROGYA.COM ***
+      SCALABLE SYSTEMS · REAL-TIME · AI INTEGRATIONS *** DOWNLOAD RESUME ↓ ***
     </div>
   </div>
 
@@ -37,8 +84,9 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Work</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -48,36 +96,71 @@
   <!-- Hero Section (2-Column Grid) -->
   <header class="hero-grid">
     <div class="hero-text">
-      <p class="mono-text mb-3">BENGALURU, INDIA</p>
-      <h1 class="hero-title hollow-text">SOFTWARE<br>ENGINEER<br>& CREATOR</h1>
-      <p class="lead mb-4" style="font-family: var(--font-mono); font-size: 1rem;">
-        Fullstack Developer (MERN) | AI Enthusiast | Building scalable digital experiences.
+      <p class="mono-text mb-3">BENGALURU, INDIA · MCA · SRM IST</p>
+      <span class="hero-status">Available for hire</span>
+      <h1 class="hero-title">
+        <span class="hollow-text">FULL-STACK</span><br>
+        ENGINEER<br>
+        BUILDING <span class="rotating-words">
+          <span>SCALABLE.</span>
+          <span>RESILIENT.</span>
+          <span>REAL-TIME.</span>
+          <span>AI-NATIVE.</span>
+        </span>
+      </h1>
+      <p class="hero-subtitle">
+        I design and ship production-grade APIs, real-time systems, and full-stack apps.
+        Currently building at <strong><a href="https://astrogya.com" target="_blank"
+            rel="noopener">astrogya.com</a></strong>
+        — TypeScript, MERN, Postgres/Prisma, Redis, Docker, AWS.
       </p>
-      <div class="d-flex gap-3">
+      <div class="d-flex flex-wrap gap-3">
         <a href="assets/resume.pdf" download class="btn-chani">Download Resume</a>
-        <a href="#contact" class="btn-outline-chani">Get in Touch</a>
+        <a href="#projects" class="btn-outline-chani">View Work →</a>
       </div>
     </div>
     <div class="hero-image">
-      <!-- Using a collage style blend mode in CSS -->
       <img src="assets/profile_collage.png" alt="Arjun Unnikrishnan" />
     </div>
   </header>
 
+  <!-- Impact Stats Panel -->
+  <section class="impact-panel" aria-label="Engineering impact at a glance">
+    <div class="impact-cell reveal">
+      <div class="impact-num">50<span class="plus">+</span></div>
+      <div class="impact-label">REST Endpoints Shipped</div>
+    </div>
+    <div class="impact-cell reveal">
+      <div class="impact-num">9<span class="plus">+</span></div>
+      <div class="impact-label">Production Integrations</div>
+    </div>
+    <div class="impact-cell reveal">
+      <div class="impact-num">10<span class="plus">+</span></div>
+      <div class="impact-label">Full-Stack Projects</div>
+    </div>
+    <div class="impact-cell reveal">
+      <div class="impact-num">3</div>
+      <div class="impact-label">Stacks: MERN · Next · Python</div>
+    </div>
+  </section>
+
   <!-- About Section -->
   <section id="about" class="section-feature">
-    <div class="container text-center" style="max-width: 800px;">
+    <div class="container text-center reveal" style="max-width: 820px;">
+      <span class="section-number">01 — About</span>
       <h2 class="display-4 mb-4">THE <span class="hollow-text">JOURNEY</span></h2>
       <div class="text-start mb-5" style="border-left: 5px solid var(--text-primary); padding-left: 2rem;">
-        <p class="mono-text fw-bold">CURRENT ROLE: FULLSTACK INTERN @ WOWLABZ</p>
+        <p class="mono-text fw-bold">CURRENT ROLE: FULL-STACK ENGINEER @ ASTROGYA.COM · BENGALURU</p>
         <p class="lead" style="font-family: var(--font-serif); font-size: 1.2rem;">
-          Fullstack Intern at WowLabz, working on production-grade MERN applications.
-          Experienced in Redux-based state management, secure JWT authentication,
-          Redis caching, and Dockerized deployments on AWS.
-          Actively fixing high-priority production bugs and using Python + AI-assisted
-          tools to accelerate development cycles.
+          I'm a software engineer who lives at the intersection of <strong>backend depth</strong>
+          and <strong>product velocity</strong>. At <a href="https://astrogya.com" target="_blank"
+            rel="noopener"><strong>astrogya.com</strong></a>, I ship MERN/TypeScript features into
+          production — Redux-driven state, JWT auth with Redis-backed sessions, Dockerized
+          AWS deploys, and high-priority bug triage. Outside work, I design end-to-end systems:
+          luxury real-estate booking backends, astrology SaaS monorepos, real-time multiplayer
+          games, and ML pipelines. I optimize for <strong>scale, reliability, and clean
+            architecture</strong>.
         </p>
-
       </div>
 
       <div class="row text-center mt-5">
@@ -87,122 +170,11 @@
         </div>
         <div class="col-4 border-end border-dark">
           <h3 class="display-5 fw-bold counter" data-target="1">0</h3>
-          <p class="mono-text">YEARS EXP</p>
+          <p class="mono-text">YR PRODUCTION EXP</p>
         </div>
         <div class="col-4">
-          <h3 class="display-5 fw-bold counter" data-target="15">0</h3>
-          <p class="mono-text">SKILLS</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section id="experience" class="section-feature bg-white border-top border-dark">
-    <div class="container" style="max-width: 900px;">
-      <h2 class="text-center mb-5">
-        PROFESSIONAL <span class="hollow-text">EXPERIENCE</span>
-      </h2>
-
-      <div style="border-left: 4px solid var(--text-primary); padding-left: 2rem;">
-        <p class="mono-text fw-bold mb-1">
-          FULLSTACK INTERN — WOWLABZ
-        </p>
-        <p class="mono-text text-muted mb-4">
-          September 2025 – Present | Bengaluru
-        </p>
-
-        <ul class="list-unstyled mono-text">
-          <li class="mb-2">• Built and enhanced MERN stack features for production web applications.</li>
-          <li class="mb-2">• Managed complex global state using Redux Toolkit to reduce re-renders.</li>
-          <li class="mb-2">• Implemented secure authentication using JWT and server-side Redis caching.</li>
-          <li class="mb-2">• Containerized applications with Docker and assisted in AWS deployments.</li>
-          <li class="mb-2">• Fixed high-priority production bugs to ensure uptime and stability.</li>
-          <li class="mb-2">• Leveraged Python and AI coding tools (Copilot, Cursor, Antigravity).</li>
-          <li>• Worked in Agile teams, participated in code reviews, and wrote TypeScript-heavy code.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Projects Grid -->
-  <section id="projects" class="border-top border-dark">
-    <div class="container-fluid p-0">
-      <div class="p-5 border-bottom border-dark bg-white">
-        <h2 class="mb-0 text-uppercase">Selected <span class="hollow-text">Works</span></h2>
-      </div>
-
-      <div class="grid-3-col">
-        <!-- Project 1: GroceEazy -->
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="assets/project_groceeazy.png" alt="GroceEazy"
-              onerror="this.src='https://via.placeholder.com/200'" />
-          </div>
-          <p class="mono-text mb-2">FULLSTACK MERN</p>
-          <h4 class="mb-3">GroceEazy Organic</h4>
-          <p class="small text-muted mb-4">Scalable shopping app with TS, Redux Toolkit, and secure JWT auth.</p>
-          <a href="projects/update.html" class="btn-outline-chani">View Case Study</a>
-        </div>
-
-        <!-- Project 2: AI Freaks -->
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="assets/project_aifreaks.png" alt="AI Freaks"
-              onerror="this.src='https://via.placeholder.com/200'" />
-          </div>
-          <p class="mono-text mb-2">FREELANCE AI</p>
-          <h4 class="mb-3">AI Freaks Agency</h4>
-          <p class="small text-muted mb-4">AI Chatbot with ChatGPT API, automating FAQs with 90%+ accuracy.</p>
-          <a href="projects/ai-freaks-agency.html" class="btn-outline-chani">View Case Study</a>
-        </div>
-
-        <!-- Project 3: Astro Prediction -->
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="assets/project_astro.png" alt="Astro Prediction"
-              onerror="this.src='https://via.placeholder.com/200'" />
-          </div>
-          <p class="mono-text mb-2">NLP Research</p>
-          <h4 class="mb-3">Astrology Chatbot</h4>
-          <p class="small text-muted mb-4">
-            AI-powered astrology chatbot using NLP, neural networks, and ML-based intent classification.
-          </p>
-          <a href="projects/astrology-chatbot.html" class="btn-outline-chani">View Case Study</a>
-        </div>
-
-        <!-- Project 4: Age Detection (Legacy) -->
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="assets/project_age_detection.png" alt="Project 4"
-              onerror="this.src='https://via.placeholder.com/200'" />
-          </div>
-          <p class="mono-text mb-2">COMPUTER VISION</p>
-          <h4 class="mb-3">Age Detection</h4>
-          <p class="small text-muted mb-4">Real-time gender and age estimation using OpenCV.</p>
-          <a href="https://github.com/arjun-unnikrishnan-03/age-gender-detection" class="btn-outline-chani">View
-            GitHub</a>
-        </div>
-
-        <!-- Project 5: Celeb Chat (Legacy) -->
-        <div class="project-card">
-          <div class="project-img-wrapper">
-            <img src="assets/project_celeb_chat.png" alt="Project 5"
-              onerror="this.src='https://via.placeholder.com/200'" />
-          </div>
-          <p class="mono-text mb-2">NLP</p>
-          <h4 class="mb-3">Celeb Chat</h4>
-          <p class="small text-muted mb-4">Conversational AI trained on celebrity interviews.</p>
-          <a href="https://github.com/arjun-unnikrishnan-03/Celebrity-Info-Chatbot-/" class="btn-outline-chani">View
-            GitHub</a>
-        </div>
-
-        <!-- Link to All -->
-        <div class="project-card justify-content-center bg-dark text-white">
-          <h3 class="mb-4 text-white">Full Archive</h3>
-          <a href="projects/projects.html" class="btn-outline-chani" style="border-color: white; color: white;">All
-            Projects -></a>
+          <h3 class="display-5 fw-bold counter" data-target="40">0</h3>
+          <p class="mono-text">TECHNOLOGIES</p>
         </div>
       </div>
     </div>
@@ -210,129 +182,437 @@
 
   <!-- Skills Section -->
   <section id="skills" class="section-feature bg-white">
-    <div class="container">
-      <h2 class="text-center mb-5">
-        TECHNICAL <span class="hollow-text">STACK</span>
-      </h2>
+    <div class="container reveal">
+      <div class="text-center mb-5">
+        <span class="section-number">02 — Stack</span>
+        <h2>TECHNICAL <span class="hollow-text">STACK</span></h2>
+        <p class="mono-text text-muted mt-3" style="max-width: 640px; margin: 0 auto;">
+          Languages, frameworks, and tools I reach for in production.
+        </p>
+      </div>
 
       <div class="row justify-content-center">
-        <div class="col-md-10">
-          <div class="d-flex flex-wrap justify-content-center gap-3">
+        <div class="col-lg-10">
 
-            <!-- Languages -->
-            <span class="btn-outline-chani">JavaScript (ES6+)</span>
-            <span class="btn-outline-chani">TypeScript</span>
-            <span class="btn-outline-chani">Python</span>
-            <span class="btn-outline-chani">HTML5</span>
-            <span class="btn-outline-chani">CSS3</span>
-
-            <!-- Frontend -->
-            <span class="btn-outline-chani">React 19</span>
-            <span class="btn-outline-chani">Redux Toolkit</span>
-            <span class="btn-outline-chani">Redux Persist</span>
-            <span class="btn-outline-chani">Tailwind CSS v4</span>
-            <span class="btn-outline-chani">React Hook Form</span>
-            <span class="btn-outline-chani">Zod</span>
-            <span class="btn-outline-chani">Axios</span>
-            <span class="btn-outline-chani">Framer Motion</span>
-            <span class="btn-outline-chani">Chart.js</span>
-            <span class="btn-outline-chani">Recharts</span>
-            <span class="btn-outline-chani">Jest</span>
-
-            <!-- Backend -->
-            <span class="btn-outline-chani">Node.js</span>
-            <span class="btn-outline-chani">Express.js v5</span>
-            <span class="btn-outline-chani">REST API Design</span>
-            <span class="btn-outline-chani">MongoDB (Mongoose)</span>
-            <span class="btn-outline-chani">Redis</span>
-            <span class="btn-outline-chani">SQL</span>
-            <span class="btn-outline-chani">Flask</span>
-
-            <!-- Auth & Security -->
-            <span class="btn-outline-chani">JWT Authentication</span>
-            <span class="btn-outline-chani">Argon2</span>
-            <span class="btn-outline-chani">RBAC</span>
-            <span class="btn-outline-chani">Google OAuth</span>
-            <span class="btn-outline-chani">Helmet</span>
-            <span class="btn-outline-chani">CSRF Protection</span>
-            <span class="btn-outline-chani">Rate Limiting</span>
-
-            <!-- DevOps & Tools -->
-            <span class="btn-outline-chani">Docker</span>
-            <span class="btn-outline-chani">AWS</span>
-            <span class="btn-outline-chani">Git</span>
-            <span class="btn-outline-chani">GitHub</span>
-            <span class="btn-outline-chani">Postman</span>
-            <span class="btn-outline-chani">Vite</span>
-            <span class="btn-outline-chani">Cloudinary</span>
-
-            <!-- AI & Productivity -->
-            <span class="btn-outline-chani">ChatGPT API</span>
-            <span class="btn-outline-chani">Google Generative AI</span>
-            <span class="btn-outline-chani">Prompt Engineering</span>
-            <span class="btn-outline-chani">AI-Assisted Development</span>
-
-            <!-- Architecture & Practices -->
-            <span class="btn-outline-chani">Client–Server Architecture</span>
-            <span class="btn-outline-chani">Layered Architecture</span>
-            <span class="btn-outline-chani">Agile / Scrum</span>
-            <span class="btn-outline-chani">Code Reviews</span>
-            <span class="btn-outline-chani">Production Bug Fixing</span>
-            <span class="btn-outline-chani">Performance Optimization</span>
-
+          <div class="skill-group">
+            <div class="skill-group-label">Languages</div>
+            <div class="skill-tags">
+              <span class="btn-outline-chani">TypeScript</span>
+              <span class="btn-outline-chani">JavaScript (ES6+)</span>
+              <span class="btn-outline-chani">Python 3</span>
+              <span class="btn-outline-chani">SQL · PL/pgSQL</span>
+              <span class="btn-outline-chani">HTML5</span>
+              <span class="btn-outline-chani">CSS3</span>
+            </div>
           </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Backend &amp; APIs</div>
+            <div class="skill-tags">
+              <span class="btn-outline-chani">Node.js</span>
+              <span class="btn-outline-chani">Express 5</span>
+              <span class="btn-outline-chani">REST API Design</span>
+              <span class="btn-outline-chani">Socket.IO</span>
+              <span class="btn-outline-chani">Flask · Gunicorn</span>
+              <span class="btn-outline-chani">RabbitMQ</span>
+              <span class="btn-outline-chani">Zod · Joi Validation</span>
+              <span class="btn-outline-chani">Pino Logging</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Frontend</div>
+            <div class="skill-tags">
+              <span class="btn-outline-chani">React 19</span>
+              <span class="btn-outline-chani">Next.js 16 (App Router)</span>
+              <span class="btn-outline-chani">React Native · Expo</span>
+              <span class="btn-outline-chani">Redux Toolkit</span>
+              <span class="btn-outline-chani">Tailwind CSS v4</span>
+              <span class="btn-outline-chani">React Hook Form</span>
+              <span class="btn-outline-chani">Framer Motion</span>
+              <span class="btn-outline-chani">Three.js · R3F</span>
+              <span class="btn-outline-chani">Vite</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Database &amp; Cache</div>
+            <div class="skill-tags">
+              <span class="btn-outline-chani">PostgreSQL · Prisma 7</span>
+              <span class="btn-outline-chani">MongoDB · Mongoose 9</span>
+              <span class="btn-outline-chani">Redis · ioredis</span>
+              <span class="btn-outline-chani">Supabase</span>
+              <span class="btn-outline-chani">Aggregation Pipelines</span>
+              <span class="btn-outline-chani">RLS Policies</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Auth &amp; Security</div>
+            <div class="skill-tags">
+              <span class="btn-outline-chani">JWT · jose · Token Rotation</span>
+              <span class="btn-outline-chani">Argon2 · bcrypt</span>
+              <span class="btn-outline-chani">OAuth 2.0 · Google · Apple</span>
+              <span class="btn-outline-chani">Firebase Admin</span>
+              <span class="btn-outline-chani">AWS Cognito</span>
+              <span class="btn-outline-chani">RBAC</span>
+              <span class="btn-outline-chani">HMAC · AES-256-GCM</span>
+              <span class="btn-outline-chani">Helmet · CORS · Rate Limiting</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">DevOps &amp; Cloud</div>
+            <div class="skill-tags">
+              <span class="btn-outline-chani">Docker (Multi-stage)</span>
+              <span class="btn-outline-chani">AWS · Elastic Beanstalk</span>
+              <span class="btn-outline-chani">Vercel · EAS Build</span>
+              <span class="btn-outline-chani">Git · GitHub Actions</span>
+              <span class="btn-outline-chani">Husky · Commitlint</span>
+              <span class="btn-outline-chani">ESLint · Prettier</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">AI &amp; Integrations</div>
+            <div class="skill-tags">
+              <span class="btn-outline-chani">Google Gemini</span>
+              <span class="btn-outline-chani">OpenAI · ChatGPT API</span>
+              <span class="btn-outline-chani">RAG Pipelines</span>
+              <span class="btn-outline-chani">Salesforce · jsforce</span>
+              <span class="btn-outline-chani">Razorpay</span>
+              <span class="btn-outline-chani">Cloudinary</span>
+              <span class="btn-outline-chani">FCM Push</span>
+              <span class="btn-outline-chani">Strapi CMS</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-label">Architecture &amp; Practices</div>
+            <div class="skill-tags">
+              <span class="btn-outline-chani">Layered Architecture</span>
+              <span class="btn-outline-chani">Circuit Breakers</span>
+              <span class="btn-outline-chani">Multi-tier Caching</span>
+              <span class="btn-outline-chani">ACID Transactions</span>
+              <span class="btn-outline-chani">Event-Driven Systems</span>
+              <span class="btn-outline-chani">Agile · Code Reviews</span>
+              <span class="btn-outline-chani">Performance Optimization</span>
+              <span class="btn-outline-chani">Test-Driven Development</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Tech Marquee (visual flourish under skills) -->
+  <div class="tech-marquee" aria-hidden="true">
+    <div class="tech-marquee-track">
+      <span>TypeScript</span><span class="dot">●</span>
+      <span>Node.js</span><span class="dot">●</span>
+      <span>React</span><span class="dot">●</span>
+      <span>Next.js</span><span class="dot">●</span>
+      <span>PostgreSQL</span><span class="dot">●</span>
+      <span>MongoDB</span><span class="dot">●</span>
+      <span>Redis</span><span class="dot">●</span>
+      <span>Docker</span><span class="dot">●</span>
+      <span>AWS</span><span class="dot">●</span>
+      <span>Salesforce</span><span class="dot">●</span>
+      <span>RabbitMQ</span><span class="dot">●</span>
+      <span>Three.js</span><span class="dot">●</span>
+      <span>Gemini AI</span><span class="dot">●</span>
+      <span>Razorpay</span><span class="dot">●</span>
+      <span>Supabase</span><span class="dot">●</span>
+      <span>Socket.IO</span><span class="dot">●</span>
+    </div>
+  </div>
 
-  <!-- Certifications Section -->
-  <section id="certifications" class="section-feature border-top border-dark">
-    <div class="container text-center" style="max-width: 700px;">
-      <h2 class="mb-5">
-        CERTIFICATIONS & <span class="hollow-text">TRAINING</span>
-      </h2>
+  <!-- Projects Section -->
+  <section id="projects" class="border-top border-dark">
+    <div class="container-fluid p-0">
+      <div class="p-5 border-bottom border-dark bg-white text-center">
+        <span class="section-number">03 — Work</span>
+        <h2 class="mb-2 text-uppercase">Selected <span class="hollow-text">Works</span></h2>
+        <p class="mono-text text-muted mb-0">Top 3 featured · Full archive below.</p>
+      </div>
 
-      <div class="mono-text">
-        <p class="mb-3">
-          • AI–ML Virtual Internship — Google & AICTE
-        </p>
-        <p>
-          • Python Data Analytics — META (Coursera)
-        </p>
+      <!-- ============== FEATURED PROJECTS ============== -->
+
+      <!-- 01 · Dar Global (WowLabz client engagement) -->
+      <article class="featured-project reveal">
+        <div class="featured-meta">
+          <div class="featured-num">01</div>
+          <div class="featured-monogram" aria-hidden="true">DG</div>
+          <div class="featured-meta-line">Client Work · WowLabz</div>
+          <div class="featured-meta-line">Client: DarGlobal</div>
+        </div>
+        <div class="featured-body">
+          <p class="mono-text mb-2 text-muted">FEATURED CASE STUDY · CLIENT ENGAGEMENT</p>
+          <h3>Dar Global — Luxury Real-Estate Booking Backend</h3>
+          <p class="featured-tagline">
+            Backend services powering project discovery, multi-step unit booking
+            (token → URF → KYC → SPA), and Salesforce-backed lead/visit orchestration
+            for a luxury real-estate platform — built as part of the WowLabz engineering team.
+          </p>
+          <div class="featured-tags">
+            <span class="featured-tag">TypeScript</span>
+            <span class="featured-tag">Express 5</span>
+            <span class="featured-tag">PostgreSQL</span>
+            <span class="featured-tag">Prisma 7</span>
+            <span class="featured-tag">Redis</span>
+            <span class="featured-tag">Salesforce</span>
+            <span class="featured-tag">RabbitMQ</span>
+            <span class="featured-tag">Firebase</span>
+          </div>
+          <ul class="impact-bullets">
+            <li>Contributed to <strong>50+ REST endpoints</strong> across guest discovery, OTP/OAuth auth,
+              booking workflow, portfolio, and admin RBAC — with structured Pino logging and graceful
+              SIGTERM shutdown.</li>
+            <li>Worked on multi-provider auth (Firebase + Google/Facebook/Apple + OTP) with rotating
+              <strong>JWT access/refresh pairs</strong>, JTI-tracked, Redis-backed blacklisting, and
+              Postgres-persisted refresh tokens for revocation.
+            </li>
+            <li>Helped integrate Salesforce CRM via <strong>jsforce + Opossum circuit breaker</strong>
+              (50% error threshold, 10s reset), with auto re-auth on session expiry up to 4 retries.</li>
+            <li>Implemented a <strong>Redis caching layer</strong> with sha256-hashed cache keys and
+              per-route TTLs (1 min – 7 days), exposing X-Cache HIT/MISS headers and reducing CMS load.</li>
+          </ul>
+          <div class="featured-actions">
+            <a href="projects/dar-global.html" class="btn-chani">Read Case Study →</a>
+            <a href="#contact" class="btn-outline-chani">Discuss This Work</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 · Astrogya -->
+      <article class="featured-project reveal">
+        <div class="featured-meta">
+          <div class="featured-num">02</div>
+          <div class="featured-monogram" aria-hidden="true">AG</div>
+          <div class="featured-meta-line">Full-Stack · SaaS</div>
+          <div class="featured-meta-line">Web + Mobile</div>
+        </div>
+        <div class="featured-body">
+          <p class="mono-text mb-2 text-muted">FEATURED CASE STUDY</p>
+          <h3>Astrogya — Vedic &amp; Western Astrology SaaS Platform</h3>
+          <p class="featured-tagline">
+            Turborepo monorepo delivering personalized horoscopes, computed birth charts,
+            kundali matching, paid PDF reports, and an authenticated AI chatbot with RAG.
+          </p>
+          <div class="featured-tags">
+            <span class="featured-tag">Next.js 16</span>
+            <span class="featured-tag">React 19</span>
+            <span class="featured-tag">Expo · React Native</span>
+            <span class="featured-tag">Supabase · Postgres</span>
+            <span class="featured-tag">Razorpay</span>
+            <span class="featured-tag">AWS Cognito</span>
+            <span class="featured-tag">RAG / AI</span>
+          </div>
+          <ul class="impact-bullets">
+            <li>Architected a <strong>Turborepo monorepo</strong> spanning a Next.js 16 web app and
+              an Expo mobile app sharing TypeScript packages (api-client, supabase, design tokens).</li>
+            <li>Engineered a <strong>3-tier caching strategy</strong> (in-memory → Postgres → AstrologyAPI)
+              cutting third-party calls to one per zodiac sign per day across 60+ astrological endpoints.</li>
+            <li>Built a <strong>Razorpay payment pipeline</strong> with HMAC SHA-256 verification, webhook
+              handlers, idempotent JSONB-metadata delivery, and an admin refund flow with audit logging.</li>
+            <li>Integrated <strong>AWS Cognito + custom RAG backend</strong> with AES-256-GCM encrypted
+              credentials, mid-session token refresh + retry, and background fire-and-forget PDF indexing.</li>
+          </ul>
+          <div class="featured-actions">
+            <a href="projects/astrogya.html" class="btn-chani">Read Case Study →</a>
+            <a href="#contact" class="btn-outline-chani">Discuss This Work</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 · GrocEazy -->
+      <article class="featured-project reveal">
+        <div class="featured-meta">
+          <div class="featured-num">03</div>
+          <div class="featured-monogram" aria-hidden="true">GE</div>
+          <div class="featured-meta-line">Full-Stack · Multi-Role</div>
+          <div class="featured-meta-line">Real-Time · AI</div>
+        </div>
+        <div class="featured-body">
+          <p class="mono-text mb-2 text-muted">FEATURED CASE STUDY</p>
+          <h3>GrocEazy — Multi-Role Grocery E-Commerce Platform</h3>
+          <p class="featured-tagline">
+            Production-grade grocery marketplace with Customer / Manager / Admin dashboards,
+            real-time chat support, AI recipe suggestions, and transactional order management.
+          </p>
+          <div class="featured-tags">
+            <span class="featured-tag">React 19</span>
+            <span class="featured-tag">TypeScript</span>
+            <span class="featured-tag">Express 5</span>
+            <span class="featured-tag">MongoDB</span>
+            <span class="featured-tag">Socket.IO</span>
+            <span class="featured-tag">Redis</span>
+            <span class="featured-tag">Gemini AI</span>
+            <span class="featured-tag">Docker</span>
+          </div>
+          <ul class="impact-bullets">
+            <li>Architected a <strong>TypeScript monorepo</strong> with 9 RESTful resource domains under
+              versioned <code>/api/v1</code> with role-based route guards (customer/manager/admin).</li>
+            <li>Hardened JWT auth with <strong>Argon2 hashing + composite refresh tokens</strong>
+              (sessionId:rawToken), automatic rotation with replay detection, OTP flows, and Google OAuth.</li>
+            <li>Implemented <strong>ACID-style multi-document transactions</strong> for order processing —
+              atomic stock decrement, cart clear, and low-stock email triggers with symmetric restore on cancel.</li>
+            <li>Built real-time support module with <strong>Socket.IO rooms</strong>, persisted history,
+              typing indicators, and a least-loaded-manager auto-assignment via aggregation pipelines.</li>
+          </ul>
+          <div class="featured-actions">
+            <a href="projects/update.html" class="btn-chani">Read Case Study →</a>
+            <a href="https://github.com/arjun-unnikrishnan-03" target="_blank" class="btn-outline-chani">View
+              GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============== MORE PROJECTS GRID ============== -->
+      <div class="p-4 border-bottom border-dark bg-white text-center">
+        <span class="section-number">More Work</span>
+        <h3 class="mb-0 text-uppercase" style="font-size: 1.5rem;">Other <span class="hollow-text">Builds</span></h3>
+      </div>
+
+      <div class="grid-3-col">
+
+        <!-- Project: Phygital Cricket -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <div class="project-monogram" aria-hidden="true">PC</div>
+          </div>
+          <p class="mono-text mb-2">REAL-TIME · 3D · SENSOR</p>
+          <h4 class="mb-3">Phygital Cricket (Vi POC)</h4>
+          <p class="small text-muted mb-4">Phone-as-a-bat multiplayer cricket — DeviceMotion sensor, Three.js stadium,
+            Socket.IO, NTP-style clock sync.</p>
+          <a href="https://github.com/arjun-unnikrishnan-03" target="_blank" class="btn-outline-chani">View GitHub</a>
+        </div>
+
+        <!-- Project: Placement Predictor -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <div class="project-monogram" aria-hidden="true">PP</div>
+          </div>
+          <p class="mono-text mb-2">ML · PYTHON · AWS</p>
+          <h4 class="mb-3">Placement Predictor</h4>
+          <p class="small text-muted mb-4">End-to-end ML pipeline benchmarking 8 classifiers via GridSearchCV,
+            deployed on AWS Elastic Beanstalk via Flask + Gunicorn.</p>
+          <a href="https://github.com/arjun-unnikrishnan-03" target="_blank" class="btn-outline-chani">View GitHub</a>
+        </div>
+
+        <!-- Project: AI Freaks Agency (Freelance) -->
+        <div class="project-card reveal">
+          <div class="project-img-wrapper">
+            <img src="assets/project_aifreaks.png" alt="AI Freaks"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<div class=&quot;project-monogram&quot;>AF</div>'" />
+          </div>
+          <p class="mono-text mb-2">FREELANCE · AI</p>
+          <h4 class="mb-3">AI Freaks Agency</h4>
+          <p class="small text-muted mb-4">Custom AI Chatbot using ChatGPT API automating client FAQs with 90%+
+            accuracy.</p>
+          <a href="projects/ai-freaks-agency.html" class="btn-outline-chani">View Case Study</a>
+        </div>
+
+        <!-- Link to Full Archive -->
+        <div class="project-card justify-content-center bg-dark text-white reveal">
+          <h3 class="mb-4 text-white">Full Archive</h3>
+          <p class="small mb-4" style="opacity: 0.8;">Legacy projects — Age Detection, Celeb Chat, Astro NLP, and
+            more.</p>
+          <a href="projects/projects.html" class="btn-outline-chani" style="border-color: white; color: white;">All
+            Projects →</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Now / Currently Building -->
+  <section class="now-section reveal" aria-label="What I'm currently working on">
+    <div class="container">
+      <p class="now-label">Now · April 2026</p>
+      <h3>Shipping production features at <a href="https://astrogya.com" target="_blank" rel="noopener"
+          style="color: inherit; border-bottom: 1px dashed rgba(249,248,244,0.5);">astrogya.com</a> &amp; deepening
+        Postgres / Prisma fluency.</h3>
+      <p class="now-body">
+        Working through Redux Toolkit + TypeScript-heavy codebases, hardening JWT/Redis auth,
+        Dockerizing services for AWS, and triaging high-priority production bugs.
+        Always exploring AI integrations — RAG pipelines, prompt engineering,
+        and AI-assisted development workflows (Copilot, Cursor, Antigravity).
+      </p>
+    </div>
+  </section>
 
+  <!-- Experience Section -->
+  <section id="experience" class="section-feature bg-white border-top border-dark">
+    <div class="container reveal" style="max-width: 900px;">
+      <div class="text-center mb-5">
+        <span class="section-number">04 — Experience</span>
+        <h2>PROFESSIONAL <span class="hollow-text">EXPERIENCE</span></h2>
+      </div>
+
+      <div style="border-left: 4px solid var(--text-primary); padding-left: 2rem;">
+        <p class="mono-text fw-bold mb-1">FULL-STACK ENGINEER — ASTROGYA.COM</p>
+        <p class="mono-text text-muted mb-4">March 2026 – Present · Bengaluru</p>
+
+        <ul class="list-unstyled mono-text">
+          <li class="mb-2">→ Built &amp; enhanced <strong>MERN-stack features</strong> for production web
+            applications.</li>
+          <li class="mb-2">→ Managed complex global state using <strong>Redux Toolkit</strong> to reduce re-renders
+            and improve perceived performance.</li>
+          <li class="mb-2">→ Implemented secure authentication using <strong>JWT + server-side Redis
+              caching</strong>.</li>
+          <li class="mb-2">→ Containerized applications with <strong>Docker</strong> and assisted in
+            <strong>AWS</strong> deployments.
+          </li>
+          <li class="mb-2">→ Triaged &amp; fixed <strong>high-priority production bugs</strong> to ensure uptime
+            and stability.</li>
+          <li class="mb-2">→ Leveraged Python and <strong>AI coding tools</strong> (Copilot, Cursor, Antigravity)
+            to accelerate development cycles.</li>
+          <li>→ Worked in Agile teams, participated in code reviews, and shipped TypeScript-heavy production
+            code.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="section-feature border-top border-dark">
+    <div class="container text-center reveal" style="max-width: 700px;">
+      <span class="section-number">05 — Education &amp; Training</span>
+      <h2 class="mb-5">CERTIFICATIONS &amp; <span class="hollow-text">TRAINING</span></h2>
+
+      <div class="mono-text">
+        <p class="mb-3">→ <strong>Master of Computer Applications (MCA)</strong> — SRM IST</p>
+        <p class="mb-3">→ <strong>AI–ML Virtual Internship</strong> — Google &amp; AICTE</p>
+        <p class="mb-3">→ <strong>Python Data Analytics</strong> — META (Coursera)</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Writings / Blog Section -->
   <section id="writings" class="border-top border-dark">
     <div class="container-fluid p-0">
       <div class="p-5 border-bottom border-dark bg-white text-center">
-        <h2 class="mb-0 text-uppercase"><span class="hollow-text">Writings</span> & Notes</h2>
+        <span class="section-number">06 — Notes</span>
+        <h2 class="mb-0 text-uppercase"><span class="hollow-text">Writings</span> &amp; Notes</h2>
       </div>
 
       <div class="grid-3-col">
-        <!-- Post 1 -->
-        <div class="project-card">
+        <div class="project-card reveal">
           <p class="mono-text mb-2 text-muted">JUN 2025</p>
           <h4 class="mb-3">FullStack 101: The Basics</h4>
           <p class="small text-muted mb-4">Understanding how web apps actually work.</p>
           <a href="blog/post3.html" class="btn-outline-chani">Read Article</a>
         </div>
 
-        <!-- Post 2 -->
-        <div class="project-card">
+        <div class="project-card reveal">
           <p class="mono-text mb-2 text-muted">JUN 2025</p>
           <h4 class="mb-3">Top 5 Developer Tools</h4>
           <p class="small text-muted mb-4">Optimizing workflow for speed.</p>
           <a href="blog/post2.html" class="btn-outline-chani">Read Article</a>
         </div>
 
-        <!-- Post 3 -->
-        <div class="project-card">
+        <div class="project-card reveal">
           <p class="mono-text mb-2 text-muted">JUL 2025</p>
           <h4 class="mb-3">My First AI Project</h4>
           <p class="small text-muted mb-4">A story of failure and learning.</p>
@@ -347,38 +627,39 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-9">
-          <div class="contact-container text-center">
-            <h2 class="mb-5">LET'S <span class="hollow-text">CONNECT</span></h2>
-            <p class="mono-text mb-5 lead">Available for freelance & full-time roles.</p>
+          <div class="contact-container text-center reveal">
+            <span class="section-number">07 — Contact</span>
+            <h2 class="mb-3">LET'S <span class="hollow-text">CONNECT</span></h2>
+            <p class="mono-text mb-2 lead">Available for <strong>full-time roles</strong> &amp; freelance
+              engagements.</p>
+            <p class="mono-text text-muted mb-5" style="font-size: 0.85rem;">Replies usually within 24h.</p>
 
             <div class="row justify-content-center gy-5">
-              <!-- LinkedIn -->
               <div class="col-md-3 col-6">
-                <a href="https://www.linkedin.com/in/arjun-u03/" target="_blank" class="text-center d-block">
+                <a href="https://www.linkedin.com/in/arjun-u03/" target="_blank" rel="noopener"
+                  class="text-center d-block social-icon-link">
                   <i class="fa-brands fa-linkedin social-icon mb-3"></i>
                   <p class="mono-text small">LINKEDIN</p>
                 </a>
               </div>
 
-              <!-- GitHub -->
               <div class="col-md-3 col-6">
-                <a href="https://github.com/arjun-unnikrishnan-03" target="_blank" class="text-center d-block">
+                <a href="https://github.com/arjun-unnikrishnan-03" target="_blank" rel="noopener"
+                  class="text-center d-block social-icon-link">
                   <i class="fa-brands fa-github social-icon mb-3"></i>
                   <p class="mono-text small">GITHUB</p>
                 </a>
               </div>
 
-              <!-- Email -->
               <div class="col-md-3 col-6">
-                <a href="mailto:arjun.u1968@gmail.com" class="text-center d-block">
+                <a href="mailto:arjun.u1968@gmail.com" class="text-center d-block social-icon-link">
                   <i class="fa-solid fa-envelope social-icon mb-3"></i>
                   <p class="mono-text small">EMAIL</p>
                 </a>
               </div>
 
-              <!-- Phone -->
               <div class="col-md-3 col-6">
-                <a href="tel:+919995881824" class="text-center d-block">
+                <a href="tel:+919995881824" class="text-center d-block social-icon-link">
                   <i class="fa-solid fa-phone social-icon mb-3"></i>
                   <p class="mono-text small">CALL</p>
                 </a>
@@ -386,7 +667,8 @@
             </div>
 
             <div class="mt-5 pt-4 border-top border-dark">
-              <p class="lead mono-text mt-3">
+              <a href="assets/resume.pdf" download class="btn-chani mb-3">Download Resume (PDF)</a>
+              <p class="lead mono-text mt-3" style="font-style: italic;">
                 "Let's build something extraordinary."
               </p>
             </div>
@@ -400,21 +682,24 @@
   <footer class="site-footer">
     <div class="container">
       <h2 class="hollow-text display-3 mb-4">ARJUN UNNIKRISHNAN</h2>
-      <div class="d-flex justify-content-center gap-4 mb-4">
+      <div class="d-flex justify-content-center gap-4 mb-4 flex-wrap">
         <a href="https://github.com/arjun-unnikrishnan-03" class="mono-text">GITHUB</a>
         <span class="text-muted">/</span>
         <a href="https://www.linkedin.com/in/arjun-u03/" class="mono-text">LINKEDIN</a>
         <span class="text-muted">/</span>
         <a href="mailto:arjun.u1968@gmail.com" class="mono-text">EMAIL</a>
+        <span class="text-muted">/</span>
+        <a href="assets/resume.pdf" download class="mono-text">RESUME</a>
       </div>
-      <p class="small text-muted mono-text">© 2026 ARJUN U. | MCA GRADUATE | SRM IST</p>
+      <p class="small text-muted mono-text">© 2026 ARJUN UNNIKRISHNAN · MCA · SRM IST · BUILT WITH HTML, CSS, JS · NO
+        FRAMEWORKS</p>
     </div>
   </footer>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://kit.fontawesome.com/a4db7a9c8b.js" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 </body>
 
 </html>

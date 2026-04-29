@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dar Global — Luxury Real-Estate Booking Backend | Arjun Unnikrishnan</title>
+  <meta name="description"
+    content="Production backend for a luxury real-estate platform — 50+ REST endpoints, Salesforce CRM integration, JWT/OAuth multi-provider auth, Redis caching, RabbitMQ + FCM. TypeScript, Express 5, PostgreSQL, Prisma 7." />
+
+  <link rel="icon" type="image/png" href="../assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css?v=3" />
+
+  <style>
+    .case-study-hero {
+      background: var(--text-primary);
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    .case-study-hero .hollow-text {
+      -webkit-text-stroke-color: white;
+    }
+    .case-study-hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.05;
+      text-transform: none;
+    }
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: var(--border-black);
+      border-bottom: var(--border-black);
+      background: var(--bg-white);
+    }
+    .stat-row .stat-cell {
+      padding: 1.75rem 1rem;
+      text-align: center;
+      border-right: var(--border-black);
+    }
+    .stat-row .stat-cell:last-child { border-right: none; }
+    .stat-row .stat-num {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .stat-row .stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+    @media (max-width: 768px) {
+      .case-study-hero h1 { font-size: 2.2rem; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+      .stat-row .stat-cell:nth-child(2) { border-right: none; }
+      .stat-row .stat-cell:nth-child(1),
+      .stat-row .stat-cell:nth-child(2) { border-bottom: var(--border-black); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="../index.html">ARJUN.U</a>
+      <div class="ms-auto">
+        <a class="nav-link" href="projects.html">← BACK TO ARCHIVE</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="case-study-hero">
+    <div class="container">
+      <p class="mono-text text-white-50 mb-3">CLIENT ENGAGEMENT · WOWLABZ × DARGLOBAL</p>
+      <h1 class="mb-2" style="font-family: var(--font-serif);">
+        <span class="hollow-text">Dar</span> Global
+      </h1>
+      <p class="mono-text mb-4"
+        style="opacity: 0.6; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;">
+        Built as part of the WowLabz engineering team for client DarGlobal
+      </p>
+      <p class="mono-text mb-4" style="opacity: 0.85; max-width: 780px; margin: 0 auto;">
+        Production backend for a luxury real-estate mobile/web app powering project discovery,
+        multi-step unit booking (token → URF → KYC → SPA), portfolio management, and
+        Salesforce-backed lead/visit orchestration.
+      </p>
+      <div class="tech-badges">
+        <span class="tech-badge">TypeScript 5</span>
+        <span class="tech-badge">Express 5</span>
+        <span class="tech-badge">PostgreSQL</span>
+        <span class="tech-badge">Prisma 7</span>
+        <span class="tech-badge">Redis · ioredis</span>
+        <span class="tech-badge">RabbitMQ · amqplib</span>
+        <span class="tech-badge">Salesforce · jsforce</span>
+        <span class="tech-badge">Firebase Admin</span>
+        <span class="tech-badge">jose JWT</span>
+        <span class="tech-badge">Strapi CMS</span>
+        <span class="tech-badge">Opossum</span>
+        <span class="tech-badge">Pino</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="stat-row">
+    <div class="stat-cell"><div class="stat-num">50+</div><div class="stat-label">REST Endpoints</div></div>
+    <div class="stat-cell"><div class="stat-num">6</div><div class="stat-label">CMS Sources Unified</div></div>
+    <div class="stat-cell"><div class="stat-num">4</div><div class="stat-label">Auth Providers</div></div>
+    <div class="stat-cell"><div class="stat-num">7d</div><div class="stat-label">Max Cache TTL</div></div>
+  </section>
+
+  <section class="section-feature">
+    <div class="container reveal" style="max-width: 860px;">
+      <span class="section-number">01 — Engagement</span>
+      <h2 class="mb-4">THE <span class="hollow-text">CONTEXT</span></h2>
+      <p class="lead mb-4">
+        This was a <strong>client engagement at WowLabz</strong> for DarGlobal — building the
+        backend that powers a luxury real-estate booking platform: discovery across multiple
+        property collections, secure multi-provider auth (phone OTP + Google + Facebook + Apple),
+        KYC-driven multi-step bookings, portfolio management, real-time push, and tight
+        Salesforce CRM integration — all with production-grade resilience, observability, and security.
+      </p>
+      <p class="mono-text text-muted mb-5" style="font-size: 0.85rem;">
+        Worked on backend services as part of the WowLabz engineering team. The bullets below
+        describe my individual contributions and ownership areas within the broader project.
+      </p>
+
+      <span class="section-number">02 — My Contributions</span>
+      <h2 class="mb-4">IMPACT <span class="hollow-text">BULLETS</span></h2>
+      <ul class="impact-bullets-page">
+        <li>Built a <strong>TypeScript + Express 5 REST API</strong> (Node ≥18, Prisma 7, PostgreSQL, Redis)
+          exposing <strong>50+ endpoints</strong> across guest discovery, OTP/OAuth auth, user profile,
+          booking workflow, portfolio, and admin RBAC — deployed with structured Pino logging and
+          graceful SIGTERM/SIGINT shutdown.</li>
+        <li>Designed a <strong>multi-provider authentication system</strong> with Firebase Admin–verified
+          Google/Facebook/Apple sign-in plus phone OTP, issuing rotating JWT access/refresh pairs
+          (jose, HS256, JTI-tracked) with Redis-backed token blacklisting and Postgres-persisted
+          refresh tokens for revocation.</li>
+        <li>Implemented <strong>Salesforce CRM integration</strong> using jsforce + a REST middleware
+          client, including OAuth client-credentials auth, automatic re-authentication on
+          <code>INVALID_SESSION_ID</code> with up to 4 retries, an <strong>Opossum circuit breaker</strong>
+          (50% error threshold, 10s reset), and a Lead/Visit DTO ↔ domain adapter that hydrates
+          user KYC, addresses, and tier on first OTP login.</li>
+        <li>Engineered a <strong>Redis caching layer</strong> with module-scoped, user-aware keys
+          (sha256-hashed normalized URLs, sorted query params) and per-route TTLs (1 min – 7 days),
+          exposing <code>X-Cache HIT/MISS</code> headers and cutting Strapi CMS hits for project/news/collaboration listings.</li>
+        <li>Modeled a <strong>Prisma/PostgreSQL schema</strong> for User, Admin, Role, RolePermission,
+          AccessToken, OTP, UserAddress, UserSettings, RequestTracker — including bilingual
+          (English/Arabic) name and address fields, KYC document fields, composite uniqueness on
+          (countryCode, phoneNumber), and module/action permission matrices for admin RBAC.</li>
+        <li>Built a <strong>Strapi-backed multi-source content layer</strong> unifying projects from
+          6 distinct CMS endpoints (One-of-One, Amaya, Trump Plaza, Rayana, AIDA, Play Projects)
+          with locale-aware routing, deep populate, and a shared circuit breaker for upstream resilience.</li>
+        <li>Implemented an async <strong>FCM push-notification pipeline</strong> with a durable RabbitMQ
+          queue (amqplib, persistent messages) and a singleton Firebase Admin sender, decoupling
+          notification fan-out from the request lifecycle.</li>
+        <li>Hardened the API surface with Helmet, CORS, <strong>Express rate limiting backed by Redis</strong>
+          on auth-sensitive routes, Zod request validation, AsyncLocalStorage-based request-ID propagation,
+          and a request-tracker middleware persisting method/URL/status/duration/UA/device metadata
+          for audit.</li>
+        <li>Implemented <strong>timezone-correct visit scheduling</strong> (Asia/Dubai via Intl.DateTimeFormat)
+          generating 30-minute slots with same-day past-slot filtering, and orchestrated
+          scheduleVisit / rescheduleVisit / cancelVisit against Salesforce Leads with separate
+          UTC vs. UAE time semantics for in-person vs. virtual visits.</li>
+      </ul>
+
+      <span class="section-number">03 — Outcome</span>
+      <h2 class="mb-4">THE <span class="hollow-text">OUTCOME</span></h2>
+      <p class="mb-4">
+        The areas I owned hold up under real-world conditions: <strong>resilient at integration
+        boundaries</strong> (circuit breakers, retries, graceful re-auth), <strong>observable</strong>
+        (structured Pino logs, request tracing via AsyncLocalStorage, audit trails), and
+        <strong>secure by default</strong> (multi-provider auth, RBAC, rate limiting, request validation).
+        The kind of code you can hand off to oncall.
+      </p>
+      <p class="mono-text text-muted mb-5" style="font-size: 0.8rem; font-style: italic;">
+        Note · Client codebase is proprietary to WowLabz / DarGlobal — no source code, screenshots,
+        or internal artifacts are shared. This page describes engineering responsibilities and
+        publicly-known stack only.
+      </p>
+
+      <div class="text-center mt-5">
+        <a href="../index.html#projects" class="btn-chani">← Back to Projects</a>
+        <a href="../index.html#contact" class="btn-outline-chani ms-2">Discuss This Work</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container text-center">
+      <p class="small text-muted mono-text">© 2026 ARJUN UNNIKRISHNAN</p>
+    </div>
+  </footer>
+
+  <script src="../script.js?v=2"></script>
+</body>
+
+</html>
